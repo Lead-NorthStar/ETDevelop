@@ -10,6 +10,7 @@ namespace ET
     public class CodeLoader : Singleton<CodeLoader>, ISingletonAwake
     {
         private Assembly assembly;
+        private Assembly yiuiAssembly;
 
         private Dictionary<string, TextAsset> dlls;
         private Dictionary<string, TextAsset> aotDlls;
@@ -22,8 +23,8 @@ namespace ET
         {
             if (!Define.IsEditor)
             {
-                this.dlls = await ResourcesComponent.Instance.LoadAllAssetsAsync<TextAsset>($"Assets/Bundles/Code/Model.dll.bytes");
-                this.aotDlls = await ResourcesComponent.Instance.LoadAllAssetsAsync<TextAsset>($"Assets/Bundles/AotDlls/mscorlib.dll.bytes");
+                this.dlls = await ResourcesComponent.Instance.LoadAllAssetsAsync<TextAsset>($"Model.dll");
+                this.aotDlls = await ResourcesComponent.Instance.LoadAllAssetsAsync<TextAsset>($"mscorlib.dll");
             }
         }
 
@@ -80,10 +81,22 @@ namespace ET
                 }
 
                 this.assembly = Assembly.Load(assBytes, pdbBytes);
+                
+                Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+
+                foreach (Assembly ass in assemblies)
+                {
+                    string name = ass.GetName().Name;
+                    if (name == "YIUIFramework")
+                    {
+                        this.yiuiAssembly = ass;
+                        break;
+                    }
+                }
 
                 Assembly hotfixAssembly = this.LoadHotfix();
 
-                World.Instance.AddSingleton<CodeTypes, Assembly[]>(new[] { typeof(World).Assembly, typeof(Init).Assembly, this.assembly, hotfixAssembly });
+                World.Instance.AddSingleton<CodeTypes, Assembly[]>(new[] { typeof(World).Assembly, typeof(Init).Assembly, this.assembly, this.yiuiAssembly, hotfixAssembly });
             }
 
             IStaticMethod start = new StaticMethod(this.assembly, "ET.Entry", "Start");
