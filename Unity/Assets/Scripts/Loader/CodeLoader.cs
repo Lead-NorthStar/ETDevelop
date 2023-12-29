@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using ET.Client;
 using HybridCLR;
 using UnityEngine;
 
@@ -23,8 +24,8 @@ namespace ET
         {
             if (!Define.IsEditor)
             {
-                this.dlls = await ResourcesComponent.Instance.LoadAllAssetsAsync<TextAsset>($"Assets/Bundles/Code/Unity.Model.dll.bytes");
-                this.aotDlls = await ResourcesComponent.Instance.LoadAllAssetsAsync<TextAsset>($"Assets/Bundles/AotDlls/mscorlib.dll.bytes");
+                this.dlls = await ResourcesComponent.Instance.LoadAllAssetsAsync<TextAsset>("Unity.Model.dll");
+                this.aotDlls = await ResourcesComponent.Instance.LoadAllAssetsAsync<TextAsset>("mscorlib.dll");
             }
         }
 
@@ -70,8 +71,9 @@ namespace ET
 
             World.Instance.AddSingleton<CodeTypes, Assembly[]>(new[]
             {
-                typeof (World).Assembly, typeof (Init).Assembly, this.modelAssembly, this.modelViewAssembly, hotfixAssembly,
-                hotfixViewAssembly
+                typeof (World).Assembly, typeof (Init).Assembly, typeof (YIUIComponent).Assembly, 
+                this.modelAssembly, this.modelViewAssembly, 
+                hotfixAssembly, hotfixViewAssembly
             });
 
             IStaticMethod start = new StaticMethod(this.modelAssembly, "ET.Entry", "Start");
