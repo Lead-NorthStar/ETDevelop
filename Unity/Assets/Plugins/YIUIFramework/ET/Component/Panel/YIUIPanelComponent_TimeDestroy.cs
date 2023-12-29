@@ -14,6 +14,7 @@ namespace ET.Client
 
         internal void CacheTimeCountDownDestroyPanel()
         {
+            StopCountDownDestroyPanel();
             m_Token = new ETCancellationToken();
             DoCountDownDestroyPanel(m_Token).Coroutine();
         }
@@ -30,7 +31,7 @@ namespace ET.Client
         {
             try
             {
-                await this.Fiber().Root.GetComponent<TimerComponent>().WaitAsync((long)(CachePanelTime * 1000), token);
+                await this.Fiber().TimerComponent.WaitAsync((long)(CachePanelTime * 1000), token);
                 if (token.IsCancel()) //取消倒计时
                 {
                     return;
