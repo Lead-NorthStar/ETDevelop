@@ -9,12 +9,13 @@ namespace ET
     /// <summary>
     /// 资源文件查询服务类
     /// </summary>
-    public class GameQueryServices : IQueryServices
+    public class GameQueryServices : IBuildinQueryServices
     {
-        public bool QueryStreamingAssets(string packageName, string fileName)
+        public bool Query(string packageName, string fileName, string fileCRC)
         {
             // 注意：fileName包含文件格式
-            string filePath = Path.Combine(YooAssetSettings.DefaultYooFolderName, packageName, fileName);
+            //string filePath = Path.Combine(YooAssetSettings.DefaultYooFolderName, packageName, fileName);
+            string filePath = Path.Combine("yoo", packageName, fileName);
             return BetterStreamingAssets.FileExists(filePath);
         }
     }
@@ -72,7 +73,7 @@ namespace ET
                 case EPlayMode.EditorSimulateMode:
                 {
                     EditorSimulateModeParameters createParameters = new();
-                    createParameters.SimulateManifestFilePath = EditorSimulateModeHelper.SimulateBuild(packageName);
+                    createParameters.SimulateManifestFilePath = EditorSimulateModeHelper.SimulateBuild(EDefaultBuildPipeline.ScriptableBuildPipeline, packageName);
                     await package.InitializeAsync(createParameters).Task;
                     break;
                 }
@@ -87,7 +88,7 @@ namespace ET
                     string defaultHostServer = GetHostServerURL();
                     string fallbackHostServer = GetHostServerURL();
                     HostPlayModeParameters createParameters = new();
-                    createParameters.QueryServices = new GameQueryServices();
+                    createParameters.BuildinQueryServices = new GameQueryServices();
                     createParameters.RemoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
                     await package.InitializeAsync(createParameters).Task;
                     break;
@@ -138,7 +139,7 @@ namespace ET
         /// </summary>
         public async ETTask<T> LoadAssetAsync<T>(string location) where T: UnityEngine.Object
         {
-            AssetOperationHandle handle = YooAssets.LoadAssetAsync<T>(location);
+            AssetHandle handle = YooAssets.LoadAssetAsync<T>(location);
             await handle.Task;
             T t = (T)handle.AssetObject;
             handle.Release();
@@ -151,7 +152,7 @@ namespace ET
         /// </summary>
         public async ETTask<Dictionary<string, T>> LoadAllAssetsAsync<T>(string location) where T: UnityEngine.Object
         {
-            AllAssetsOperationHandle allAssetsOperationHandle = YooAssets.LoadAllAssetsAsync<T>(location);
+            AllAssetsHandle allAssetsOperationHandle = YooAssets.LoadAllAssetsAsync<T>(location);
             await allAssetsOperationHandle.Task;
             Dictionary<string, T> dictionary = new Dictionary<string, T>();
             foreach(UnityEngine.Object assetObj in allAssetsOperationHandle.AllAssetObjects)

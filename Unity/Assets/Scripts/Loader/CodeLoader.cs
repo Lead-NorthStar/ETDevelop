@@ -71,7 +71,7 @@ namespace ET
 
             World.Instance.AddSingleton<CodeTypes, Assembly[]>(new[]
             {
-                typeof (World).Assembly, typeof (Init).Assembly, typeof (YIUIComponent).Assembly, 
+                typeof (YIUIComponent).Assembly, typeof (World).Assembly, typeof (Init).Assembly,
                 this.modelAssembly, this.modelViewAssembly, 
                 hotfixAssembly, hotfixViewAssembly
             });
@@ -117,8 +117,9 @@ namespace ET
 
             CodeTypes codeTypes = World.Instance.AddSingleton<CodeTypes, Assembly[]>(new[]
             {
-                typeof (World).Assembly, typeof (Init).Assembly, this.modelAssembly, this.modelViewAssembly, hotfixAssembly,
-                hotfixViewAssembly
+                typeof (YIUIComponent).Assembly, typeof (World).Assembly, typeof (Init).Assembly, 
+                this.modelAssembly, this.modelViewAssembly, 
+                hotfixAssembly, hotfixViewAssembly
             });
             codeTypes.CreateCode();
 
