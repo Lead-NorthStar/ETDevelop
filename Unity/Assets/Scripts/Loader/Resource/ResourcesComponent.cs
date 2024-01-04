@@ -73,7 +73,7 @@ namespace ET
                 case EPlayMode.EditorSimulateMode:
                 {
                     EditorSimulateModeParameters createParameters = new();
-                    createParameters.SimulateManifestFilePath = EditorSimulateModeHelper.SimulateBuild(EDefaultBuildPipeline.ScriptableBuildPipeline, packageName);
+                    createParameters.SimulateManifestFilePath = EditorSimulateModeHelper.SimulateBuild(EDefaultBuildPipeline.ScriptableBuildPipeline.ToString(), packageName);
                     await package.InitializeAsync(createParameters).Task;
                     break;
                 }

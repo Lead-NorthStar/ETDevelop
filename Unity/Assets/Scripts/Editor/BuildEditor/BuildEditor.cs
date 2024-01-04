@@ -134,8 +134,7 @@ namespace ET
                 this.globalConfig.CodeMode = codeMode;
                 EditorUtility.SetDirty(this.globalConfig);
                 AssetDatabase.SaveAssets();
-                
-                BuildHelper.ReGenerateProjectFiles();
+                AssemblyTool.RefreshCodeMode(codeMode);
             }
 
             EPlayMode ePlayMode = (EPlayMode)EditorGUILayout.EnumPopup("EPlayMode: ", this.globalConfig.EPlayMode);
