@@ -94,14 +94,12 @@ namespace ET
             
             (Assembly hotfixAssembly, Assembly hotfixViewAssembly) = this.LoadHotfix();
 
-            Log.Error("==> 1");
             World.Instance.AddSingleton<CodeTypes, Assembly[]>(new[]
             {
                 typeof (YIUIComponent).Assembly, typeof (World).Assembly, typeof (Init).Assembly,
                 this.modelAssembly, this.modelViewAssembly, 
                 hotfixAssembly, hotfixViewAssembly
             });
-            Log.Error("==> 2");
 
             IStaticMethod start = new StaticMethod(this.modelAssembly, "ET.Entry", "Start");
             start.Run();
@@ -115,10 +113,8 @@ namespace ET
             byte[] hotfixViewPdbBytes;
             Assembly hotfixAssembly = null;
             Assembly hotfixViewAssembly = null;
-            Log.Error("##> 1");
             if (!Define.IsEditor)
             {
-                Log.Error("##> 2");
                 hotfixAssBytes = this.dlls["Unity.Hotfix.dll"].bytes;
                 hotfixPdbBytes = this.dlls["Unity.Hotfix.pdb"].bytes;
                 hotfixViewAssBytes = this.dlls["Unity.HotfixView.dll"].bytes;
@@ -129,16 +125,12 @@ namespace ET
                 //hotfixViewAssBytes = File.ReadAllBytes(Path.Combine(Define.CodeDir, "Unity.HotfixView.dll.bytes"));
                 //hotfixViewPdbBytes = File.ReadAllBytes(Path.Combine(Define.CodeDir, "Unity.HotfixView.pdb.bytes"));
                 hotfixAssembly = Assembly.Load(hotfixAssBytes, hotfixPdbBytes);
-                Log.Error("##> 3");
                 hotfixViewAssembly = Assembly.Load(hotfixViewAssBytes, hotfixViewPdbBytes);
-                Log.Error("##> 4");
             }
             else
             {
-                Log.Error("##> 5");
                 if (this.enableDll)
                 {
-                    Log.Error("##> 6");
                     hotfixAssBytes = File.ReadAllBytes(Path.Combine(Define.CodeDir, "Unity.Hotfix.dll.bytes"));
                     hotfixPdbBytes = File.ReadAllBytes(Path.Combine(Define.CodeDir, "Unity.Hotfix.pdb.bytes"));
                     hotfixViewAssBytes = File.ReadAllBytes(Path.Combine(Define.CodeDir, "Unity.HotfixView.dll.bytes"));
@@ -148,7 +140,6 @@ namespace ET
                 }
                 else
                 {
-                    Log.Error("##> 7");
                     Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
                     foreach (Assembly ass in assemblies)
                     {
@@ -170,7 +161,6 @@ namespace ET
                 }
             }
             
-            Log.Error("##> 8");
             return (hotfixAssembly, hotfixViewAssembly);
         }
 
