@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+#pragma warning disable CS0162 // 检测到不可到达的代码
+
 namespace YIUIFramework
 {
     /// <summary>

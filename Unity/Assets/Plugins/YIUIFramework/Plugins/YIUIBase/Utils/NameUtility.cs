@@ -1,6 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using Logger = YIUIFramework.Logger;
 
+#pragma warning disable CS0162 // 检测到不可到达的代码
+
 namespace YIUIFramework
 {
     public static class NameUtility

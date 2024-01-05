@@ -56,8 +56,8 @@ namespace YIUIFramework
         private void Refresh()
         {
             #if UNITY_EDITOR
-            var prefabType = PrefabUtility.GetPrefabType(this.gameObject);
-            if (prefabType == PrefabType.Prefab)
+            var prefabType = PrefabUtility.GetPrefabAssetType(this.gameObject);
+            if (prefabType == PrefabAssetType.Regular)
             {
                 return;
             }
