@@ -47,10 +47,7 @@ namespace ET
             // 创建需要reload的code singleton
             CodeTypes.Instance.CreateCode();
             
-            Log.Error("==> 3");
-            
             await World.Instance.AddSingleton<ConfigLoader>().LoadAsync();
-            Log.Error("==> 4");
 
             await FiberManager.Instance.Create(SchedulerType.Main, ConstFiberId.Main, 0, SceneType.Main, "");
         }
