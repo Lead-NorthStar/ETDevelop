@@ -221,7 +221,6 @@ namespace YIUIFramework
 
             var data = m_AllCountDown[guid];
             m_AllCountDown.Remove(guid);
-            RemoveByData(data);
             RefPool.Put(data);
             m_AtCount--;
 

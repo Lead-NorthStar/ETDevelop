@@ -167,7 +167,9 @@ namespace ET.Client
                 if (this.UIBase.UIBindVo.CodeType == EUICodeType.Panel)
                     await WindowFadeAnim.In(this.UIBase);
             }
-            _LastETTask.SetResult();
+            
+            if (this.IsDisposed) return;
+            _LastETTask?.SetResult();
             _LastETTask = null;
         }
 
@@ -185,7 +187,9 @@ namespace ET.Client
                 if (this.UIBase.UIBindVo.CodeType == EUICodeType.Panel)
                     await WindowFadeAnim.Out(this.UIBase);
             }
-            _LastETTask.SetResult();
+            
+            if (this.IsDisposed) return;
+            _LastETTask?.SetResult();
             _LastETTask = null;
         }
     }
