@@ -17,11 +17,6 @@ namespace ET.Client
         {
             self.GMParamLoop = new YIUILoopScroll<GMParamInfo, GMParamItemComponent>(self, self.u_ComParamLoop, self.GMParamRenderer);
         }
-         
-        [EntitySystem]
-        private static void Awake(this GMCommandItemComponent self)
-        {
-        }
         
         [EntitySystem]
         private static void Destroy(this GMCommandItemComponent self)

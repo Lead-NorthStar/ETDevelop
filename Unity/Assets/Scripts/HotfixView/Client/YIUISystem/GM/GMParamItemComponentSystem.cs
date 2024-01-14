@@ -15,11 +15,6 @@ namespace ET.Client
         }
         
         [EntitySystem]
-        private static void Awake(this GMParamItemComponent self)
-        {
-        }
-        
-        [EntitySystem]
         private static void Destroy(this GMParamItemComponent self)
         {
         }

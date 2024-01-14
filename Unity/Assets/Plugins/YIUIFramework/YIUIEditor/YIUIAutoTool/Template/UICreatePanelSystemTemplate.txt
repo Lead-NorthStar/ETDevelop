@@ -18,11 +18,6 @@ namespace ${Namespace}
         }
         
         [EntitySystem]
-        private static void Awake(this ${ResName}Component self)
-        {
-        }
-        
-        [EntitySystem]
         private static void Destroy(this ${ResName}Component self)
         {
         }
