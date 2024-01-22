@@ -174,7 +174,7 @@ namespace ET
             });
             codeTypes.CreateCode();
 
-            Log.Debug($"reload dll finish!");
+            Log.Info($"reload dll finish!");
         }
     }
 }
