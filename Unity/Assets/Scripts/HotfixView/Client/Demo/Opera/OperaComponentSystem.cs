@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace ET.Client
@@ -22,7 +21,7 @@ namespace ET.Client
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 1000, self.mapMask))
                 {
-                    C2M_PathfindingResult c2MPathfindingResult = new C2M_PathfindingResult();
+                    C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
                     c2MPathfindingResult.Position = hit.point;
                     self.Root().GetComponent<ClientSenderCompnent>().Send(c2MPathfindingResult);
                 }
@@ -33,10 +32,10 @@ namespace ET.Client
                 CodeLoader.Instance.Reload();
                 return;
             }
-        
+
             if (Input.GetKeyDown(KeyCode.T))
             {
-                C2M_TransferMap c2MTransferMap = new();
+                C2M_TransferMap c2MTransferMap = C2M_TransferMap.Create();
                 self.Root().GetComponent<ClientSenderCompnent>().Call(c2MTransferMap).Coroutine();
             }
         }
