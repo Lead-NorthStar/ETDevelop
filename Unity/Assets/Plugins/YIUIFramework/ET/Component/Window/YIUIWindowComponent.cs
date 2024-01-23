@@ -19,7 +19,7 @@ namespace ET.Client
         private YIUIComponent _UiBase;
 
         private ETTask _LastETTask;
-        
+
         public YIUIComponent UIBase
         {
             get
@@ -49,6 +49,8 @@ namespace ET.Client
 
         internal async ETTask InternalOnWindowOpenTween(bool tween = true)
         {
+            this.UIBase.SetActive(true);
+            
             if (tween && (!WindowBanRepetitionOpenTween || !m_FirstOpenTween))
             {
                 m_FirstOpenTween = true;
@@ -100,6 +102,7 @@ namespace ET.Client
         private void OnCloseTweenEnd()
         {
             YIUIEventSystem.CloseTweenEnd(this.UIBase.OwnerUIEntity);
+            this.UIBase.SetActive(false);
         }
 
         private async ETTask SealedOnWindowOpenTween()
@@ -156,7 +159,7 @@ namespace ET.Client
             {
                 await this._LastETTask;
             }
-            
+
             _LastETTask = ETTask.Create(true);
             var tweent = await YIUIEventSystem.OpenTween(this.UIBase.OwnerUIEntity);
             if (!tweent)
@@ -167,7 +170,9 @@ namespace ET.Client
                 if (this.UIBase.UIBindVo.CodeType == EUICodeType.Panel)
                     await WindowFadeAnim.In(this.UIBase);
             }
-            _LastETTask.SetResult();
+
+            if (this.IsDisposed) return;
+            _LastETTask?.SetResult();
             _LastETTask = null;
         }
 
@@ -177,7 +182,7 @@ namespace ET.Client
             {
                 await this._LastETTask;
             }
-            
+
             _LastETTask = ETTask.Create(true);
             var tweent = await YIUIEventSystem.CloseTween(this.UIBase.OwnerUIEntity);
             if (!tweent)
@@ -185,7 +190,9 @@ namespace ET.Client
                 if (this.UIBase.UIBindVo.CodeType == EUICodeType.Panel)
                     await WindowFadeAnim.Out(this.UIBase);
             }
-            _LastETTask.SetResult();
+
+            if (this.IsDisposed) return;
+            _LastETTask?.SetResult();
             _LastETTask = null;
         }
     }

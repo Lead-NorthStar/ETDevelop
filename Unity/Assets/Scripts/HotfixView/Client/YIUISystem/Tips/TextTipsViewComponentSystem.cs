@@ -14,11 +14,6 @@ namespace ET.Client
         }
 
         [EntitySystem]
-        private static void Awake(this TextTipsViewComponent self)
-        {
-        }
-
-        [EntitySystem]
         private static void Destroy(this TextTipsViewComponent self)
         {
         }
@@ -42,7 +37,7 @@ namespace ET.Client
         private static async ETTask PlayAnimation(this TextTipsViewComponent self)
         {
             self.u_ComAnimation.Play(self.u_ComAnimation.clip.name);
-            await self.Fiber().Root.GetComponent<TimerComponent>().WaitAsync((long)(self.u_ComAnimation.clip.length * 1000));
+            await self.Root().GetComponent<TimerComponent>().WaitAsync((long)(self.u_ComAnimation.clip.length * 1000));
             await TipsHelper.CloseTipsView(self);
         }
 

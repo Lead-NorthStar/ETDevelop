@@ -17,12 +17,7 @@ namespace ET.Client
         {
             self.GMParamLoop = new YIUILoopScroll<GMParamInfo, GMParamItemComponent>(self, self.u_ComParamLoop, self.GMParamRenderer);
         }
-         
-        [EntitySystem]
-        private static void Awake(this GMCommandItemComponent self)
-        {
-        }
-        
+
         [EntitySystem]
         private static void Destroy(this GMCommandItemComponent self)
         {
@@ -41,7 +36,7 @@ namespace ET.Client
 
         private static async ETTask WaitRefresh(this GMCommandItemComponent self)
         {            
-            await self.Fiber().Root.GetComponent<TimerComponent>().WaitAsync(500);
+            await self.Root().GetComponent<TimerComponent>().WaitAsync(500);
             self.GMParamLoop.RefreshCells();
         }
         
