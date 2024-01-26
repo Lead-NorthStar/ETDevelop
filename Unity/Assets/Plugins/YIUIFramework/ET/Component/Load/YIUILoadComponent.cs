@@ -11,7 +11,7 @@ namespace ET.Client
     [ComponentOf(typeof (YIUIMgrComponent))]
     public partial class YIUILoadComponent: Entity, IAwake, IAwake<string>, IDestroy
     {
-        private Dictionary<int, AssetOperationHandle> m_AllHandle = new();
+        private Dictionary<int, AssetHandle> m_AllHandle = new();
 
         private ResourcePackage package;
 
@@ -82,7 +82,7 @@ namespace ET.Client
 
         //Demo中对YooAsset加载后的一个简单返回封装
         //只有成功加载才返回 否则直接释放
-        private (UnityEngine.Object, int) LoadAssetHandle(AssetOperationHandle handle)
+        private (UnityEngine.Object, int) LoadAssetHandle(AssetHandle handle)
         {
             if (handle.AssetObject != null)
             {
