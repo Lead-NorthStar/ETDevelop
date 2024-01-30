@@ -1,5 +1,5 @@
 ﻿using YIUIFramework;
-
+#pragma warning disable ET0020
 namespace ET.Client
 {
     public partial class GMCommandItemComponent: Entity

@@ -6,8 +6,8 @@ namespace ET.Client
 {
     public partial class TipsPanelComponent: Entity, IYIUIOpen<Type, ParamVo>, IYIUIEvent<EventPutTipsView>
     {
-        public Dictionary<Type, ObjAsyncCache<Entity>> _AllPool  = new();
-        public int                                     _RefCount = 0;
+        public Dictionary<Type, ObjAsyncCache<EntityRef<Entity>>> _AllPool  = new();
+        public int                                                _RefCount = 0;
     }
 
     /// <summary>

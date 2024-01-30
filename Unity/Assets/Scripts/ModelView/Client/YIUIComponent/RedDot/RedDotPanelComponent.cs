@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using YIUIFramework;
-
+#pragma warning disable ET0020
 namespace ET.Client
 {
     public partial class RedDotPanelComponent: Entity,IYIUIEvent<OnClickParentListEvent>,IYIUIEvent<OnClickChildListEvent>,IYIUIEvent<OnClickItemEvent>
