@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Unity/Assets/Config/Excel/StartConfig/Benchmark/StartMachineConfig.xlsx.meta
+guid: a9274a313cd9ce944949c65005d9e2c9
+========
 guid: d312f806629e77b4e81fc084dd308398
+>>>>>>>> ET-Luban/release8.1:Unity/Assets/Config/Excel/StartConfig/Benchmark/StartProcessConfig.xlsx.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

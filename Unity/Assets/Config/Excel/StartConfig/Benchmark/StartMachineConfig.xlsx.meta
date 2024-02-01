@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Unity/Assets/Config/Excel/SoundConfig.xlsx.meta
+guid: abec0df090caeec4c9a2d0b4b8bfe75b
+========
 guid: a9274a313cd9ce944949c65005d9e2c9
+>>>>>>>> ET-Luban/release8.1:Unity/Assets/Config/Excel/StartConfig/Benchmark/StartMachineConfig.xlsx.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
