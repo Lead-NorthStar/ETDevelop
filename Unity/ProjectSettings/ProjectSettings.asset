@@ -868,7 +868,7 @@ PlayerSettings:
     QNX: TextMeshPro
     Server: UNITY;ENABLE_VIEW
     Stadia: TextMeshPro
-    Standalone: UNITY;ENABLE_VIEW;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;TextMeshPro;ENABLE_IL2CPP
+    Standalone: UNITY;ENABLE_VIEW;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;TextMeshPro;ENABLE_IL2CPP;UEE
     VisionOS: TextMeshPro
     WebGL: UNITY;ENABLE_VIEW;TextMeshPro
     XboxOne: TextMeshPro
