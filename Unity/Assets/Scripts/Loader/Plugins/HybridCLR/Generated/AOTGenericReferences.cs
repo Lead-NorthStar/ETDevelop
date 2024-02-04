@@ -14,6 +14,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		"Unity.Loader.dll",
 		"Unity.ThirdParty.dll",
 		"UnityEngine.CoreModule.dll",
+		"YIUIFramework.dll",
 		"YooAsset.dll",
 		"mscorlib.dll",
 	};
@@ -51,6 +52,25 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// ET.AwakeSystem<object,object,object>
 	// ET.AwakeSystem<object,object>
 	// ET.AwakeSystem<object>
+	// ET.Client.IYIUIEvent<ET.Client.EventPutTipsView>
+	// ET.Client.IYIUIEvent<ET.Client.OnClickChildListEvent>
+	// ET.Client.IYIUIEvent<ET.Client.OnClickItemEvent>
+	// ET.Client.IYIUIEvent<ET.Client.OnClickParentListEvent>
+	// ET.Client.IYIUIEvent<ET.Client.OnGMEventClose>
+	// ET.Client.IYIUIOpen<object,object>
+	// ET.Client.IYIUIOpen<object>
+	// ET.Client.YIUIBindSystem<object>
+	// ET.Client.YIUICloseTweenSystem<object>
+	// ET.Client.YIUIEventSystem<object,ET.Client.EventPutTipsView>
+	// ET.Client.YIUIEventSystem<object,ET.Client.OnClickChildListEvent>
+	// ET.Client.YIUIEventSystem<object,ET.Client.OnClickItemEvent>
+	// ET.Client.YIUIEventSystem<object,ET.Client.OnClickParentListEvent>
+	// ET.Client.YIUIEventSystem<object,ET.Client.OnGMEventClose>
+	// ET.Client.YIUIInitializeSystem<object>
+	// ET.Client.YIUIOpenSystem<object,object,object>
+	// ET.Client.YIUIOpenSystem<object,object>
+	// ET.Client.YIUIOpenSystem<object>
+	// ET.Client.YIUIOpenTweenSystem<object>
 	// ET.DestroySystem<object>
 	// ET.DoubleMap<object,long>
 	// ET.ETAsyncTaskMethodBuilder<ET.Client.WaitType.Wait_Room2C_Start>
@@ -104,11 +124,24 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// ET.StateMachineWrap<ET.Client.ClientSenderCompnentSystem.<Call>d__5>
 	// ET.StateMachineWrap<ET.Client.ClientSenderCompnentSystem.<LoginAsync>d__3>
 	// ET.StateMachineWrap<ET.Client.ClientSenderCompnentSystem.<RemoveFiberAsync>d__2>
+	// ET.StateMachineWrap<ET.Client.CommonPanelComponentSystem.<YIUIOpen>d__5>
 	// ET.StateMachineWrap<ET.Client.EnterMapHelper.<EnterMapAsync>d__0>
 	// ET.StateMachineWrap<ET.Client.EnterMapHelper.<Match>d__1>
 	// ET.StateMachineWrap<ET.Client.EntryEvent3_InitClient.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.FiberInit_NetClient.<Handle>d__0>
 	// ET.StateMachineWrap<ET.Client.G2C_ReconnectHandler.<Run>d__0>
+	// ET.StateMachineWrap<ET.Client.GMCommandComponentSystem.<Run>d__5>
+	// ET.StateMachineWrap<ET.Client.GMCommandItemComponentSystem.<WaitRefresh>d__6>
+	// ET.StateMachineWrap<ET.Client.GMPanelComponentSystem.<YIUIOpen>d__5>
+	// ET.StateMachineWrap<ET.Client.GMViewComponentSystem.<YIUIEvent>d__5>
+	// ET.StateMachineWrap<ET.Client.GMViewComponentSystem.<YIUIOpen>d__6>
+	// ET.StateMachineWrap<ET.Client.GM_OpenReddotPanel.<Run>d__1>
+	// ET.StateMachineWrap<ET.Client.GM_Test.<Run>d__1>
+	// ET.StateMachineWrap<ET.Client.GM_TipsTest1.<Run>d__1>
+	// ET.StateMachineWrap<ET.Client.GM_TipsTest2.<Run>d__1>
+	// ET.StateMachineWrap<ET.Client.GM_TipsTest3.<Run>d__1>
+	// ET.StateMachineWrap<ET.Client.GM_TipsTest4.<Run>d__1>
+	// ET.StateMachineWrap<ET.Client.GM_TipsTest5.<Run>d__1>
 	// ET.StateMachineWrap<ET.Client.HttpClientHelper.<Get>d__0>
 	// ET.StateMachineWrap<ET.Client.LSSceneChangeHelper.<SceneChangeTo>d__0>
 	// ET.StateMachineWrap<ET.Client.LSSceneChangeHelper.<SceneChangeToReconnect>d__2>
@@ -116,11 +149,15 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// ET.StateMachineWrap<ET.Client.LSSceneChangeStart_AddComponent.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.LSSceneInitFinish_Finish.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.LSUnitViewComponentSystem.<InitAsync>d__2>
+	// ET.StateMachineWrap<ET.Client.LobbyPanelComponentSystem.<OnEventEnterAction>d__6>
+	// ET.StateMachineWrap<ET.Client.LobbyPanelComponentSystem.<YIUIOpen>d__5>
 	// ET.StateMachineWrap<ET.Client.LoginFinish_CreateLobbyUI.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.LoginFinish_CreateUILSLobby.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.LoginFinish_RemoveLoginUI.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.LoginFinish_RemoveUILSLogin.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.LoginHelper.<Login>d__0>
+	// ET.StateMachineWrap<ET.Client.LoginPanelComponentSystem.<OnEventLoginAction>d__8>
+	// ET.StateMachineWrap<ET.Client.LoginPanelComponentSystem.<YIUIOpen>d__5>
 	// ET.StateMachineWrap<ET.Client.M2C_CreateMyUnitHandler.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.M2C_CreateUnitsHandler.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.M2C_PathfindingResultHandler.<Run>d__0>
@@ -128,12 +165,21 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// ET.StateMachineWrap<ET.Client.M2C_StartSceneChangeHandler.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.M2C_StopHandler.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.Main2NetClient_LoginHandler.<Run>d__0>
+	// ET.StateMachineWrap<ET.Client.MainPanelComponentSystem.<YIUIOpen>d__5>
 	// ET.StateMachineWrap<ET.Client.Match2G_NotifyMatchSuccessHandler.<Run>d__0>
+	// ET.StateMachineWrap<ET.Client.MessageTipsViewComponentSystem.<YIUICloseTween>d__7>
+	// ET.StateMachineWrap<ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__5>
+	// ET.StateMachineWrap<ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__8>
+	// ET.StateMachineWrap<ET.Client.MessageTipsViewComponentSystem.<YIUIOpenTween>d__6>
 	// ET.StateMachineWrap<ET.Client.MoveHelper.<MoveToAsync>d__0>
 	// ET.StateMachineWrap<ET.Client.MoveHelper.<MoveToAsync>d__1>
 	// ET.StateMachineWrap<ET.Client.NetClient2Main_SessionDisposeHandler.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.OneFrameInputsHandler.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.PingComponentSystem.<PingAsync>d__2>
+	// ET.StateMachineWrap<ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__6>
+	// ET.StateMachineWrap<ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__7>
+	// ET.StateMachineWrap<ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__8>
+	// ET.StateMachineWrap<ET.Client.RedDotPanelComponentSystem.<YIUIOpen>d__5>
 	// ET.StateMachineWrap<ET.Client.ResourcesLoaderComponentSystem.<LoadAllAssetsAsync>d__4<object>>
 	// ET.StateMachineWrap<ET.Client.ResourcesLoaderComponentSystem.<LoadAssetAsync>d__3<object>>
 	// ET.StateMachineWrap<ET.Client.ResourcesLoaderComponentSystem.<LoadSceneAsync>d__5>
@@ -150,6 +196,17 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// ET.StateMachineWrap<ET.Client.SceneChangeFinishEvent_CreateUIHelp.<Run>d__0>
 	// ET.StateMachineWrap<ET.Client.SceneChangeHelper.<SceneChangeTo>d__0>
 	// ET.StateMachineWrap<ET.Client.SceneChangeStart_AddComponent.<Run>d__0>
+	// ET.StateMachineWrap<ET.Client.TextTipsViewComponentSystem.<PlayAnimation>d__6>
+	// ET.StateMachineWrap<ET.Client.TextTipsViewComponentSystem.<YIUIOpen>d__5>
+	// ET.StateMachineWrap<ET.Client.TipsHelper.<CloseTipsView>d__5>
+	// ET.StateMachineWrap<ET.Client.TipsHelper.<Open2NewVo>d__4<object>>
+	// ET.StateMachineWrap<ET.Client.TipsHelper.<Open>d__0<object>>
+	// ET.StateMachineWrap<ET.Client.TipsHelper.<Open>d__2<object>>
+	// ET.StateMachineWrap<ET.Client.TipsPanelComponentSystem.<>c__DisplayClass8_0.<<OpenTips>g__Create|0>d>
+	// ET.StateMachineWrap<ET.Client.TipsPanelComponentSystem.<OpenTips>d__8>
+	// ET.StateMachineWrap<ET.Client.TipsPanelComponentSystem.<PutTips>d__9>
+	// ET.StateMachineWrap<ET.Client.TipsPanelComponentSystem.<YIUIEvent>d__6>
+	// ET.StateMachineWrap<ET.Client.TipsPanelComponentSystem.<YIUIOpen>d__5>
 	// ET.StateMachineWrap<ET.Client.UIComponentSystem.<Create>d__1>
 	// ET.StateMachineWrap<ET.Client.UIGlobalComponentSystem.<OnCreate>d__1>
 	// ET.StateMachineWrap<ET.Client.UIHelpEvent.<OnCreate>d__0>
@@ -240,7 +297,10 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Action<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Action<System.Collections.Generic.KeyValuePair<long,object>>
 	// System.Action<Unity.Mathematics.float3>
+	// System.Action<byte,byte>
 	// System.Action<byte>
+	// System.Action<int,int>
+	// System.Action<int>
 	// System.Action<long,int>
 	// System.Action<long,object>
 	// System.Action<long>
@@ -262,6 +322,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.ArraySortHelper<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Collections.Generic.ArraySortHelper<System.Collections.Generic.KeyValuePair<long,object>>
 	// System.Collections.Generic.ArraySortHelper<Unity.Mathematics.float3>
+	// System.Collections.Generic.ArraySortHelper<int>
 	// System.Collections.Generic.ArraySortHelper<long>
 	// System.Collections.Generic.ArraySortHelper<object>
 	// System.Collections.Generic.Comparer<DotRecast.Detour.StraightPathItem>
@@ -285,56 +346,68 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.ComparisonComparer<uint>
 	// System.Collections.Generic.ComparisonComparer<ushort>
 	// System.Collections.Generic.Dictionary.Enumerator<int,ET.RpcInfo>
+	// System.Collections.Generic.Dictionary.Enumerator<int,int>
 	// System.Collections.Generic.Dictionary.Enumerator<int,long>
 	// System.Collections.Generic.Dictionary.Enumerator<int,object>
 	// System.Collections.Generic.Dictionary.Enumerator<long,ET.EntityRef<object>>
 	// System.Collections.Generic.Dictionary.Enumerator<long,ET.LSInput>
 	// System.Collections.Generic.Dictionary.Enumerator<long,object>
+	// System.Collections.Generic.Dictionary.Enumerator<object,int>
 	// System.Collections.Generic.Dictionary.Enumerator<object,long>
 	// System.Collections.Generic.Dictionary.Enumerator<object,object>
 	// System.Collections.Generic.Dictionary.Enumerator<ushort,object>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<int,ET.RpcInfo>
+	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<int,int>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<int,long>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<int,object>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<long,ET.EntityRef<object>>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<long,ET.LSInput>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<long,object>
+	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,int>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,long>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,object>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<ushort,object>
 	// System.Collections.Generic.Dictionary.KeyCollection<int,ET.RpcInfo>
+	// System.Collections.Generic.Dictionary.KeyCollection<int,int>
 	// System.Collections.Generic.Dictionary.KeyCollection<int,long>
 	// System.Collections.Generic.Dictionary.KeyCollection<int,object>
 	// System.Collections.Generic.Dictionary.KeyCollection<long,ET.EntityRef<object>>
 	// System.Collections.Generic.Dictionary.KeyCollection<long,ET.LSInput>
 	// System.Collections.Generic.Dictionary.KeyCollection<long,object>
+	// System.Collections.Generic.Dictionary.KeyCollection<object,int>
 	// System.Collections.Generic.Dictionary.KeyCollection<object,long>
 	// System.Collections.Generic.Dictionary.KeyCollection<object,object>
 	// System.Collections.Generic.Dictionary.KeyCollection<ushort,object>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<int,ET.RpcInfo>
+	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<int,int>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<int,long>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<int,object>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<long,ET.EntityRef<object>>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<long,ET.LSInput>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<long,object>
+	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,int>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,long>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,object>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<ushort,object>
 	// System.Collections.Generic.Dictionary.ValueCollection<int,ET.RpcInfo>
+	// System.Collections.Generic.Dictionary.ValueCollection<int,int>
 	// System.Collections.Generic.Dictionary.ValueCollection<int,long>
 	// System.Collections.Generic.Dictionary.ValueCollection<int,object>
 	// System.Collections.Generic.Dictionary.ValueCollection<long,ET.EntityRef<object>>
 	// System.Collections.Generic.Dictionary.ValueCollection<long,ET.LSInput>
 	// System.Collections.Generic.Dictionary.ValueCollection<long,object>
+	// System.Collections.Generic.Dictionary.ValueCollection<object,int>
 	// System.Collections.Generic.Dictionary.ValueCollection<object,long>
 	// System.Collections.Generic.Dictionary.ValueCollection<object,object>
 	// System.Collections.Generic.Dictionary.ValueCollection<ushort,object>
 	// System.Collections.Generic.Dictionary<int,ET.RpcInfo>
+	// System.Collections.Generic.Dictionary<int,int>
 	// System.Collections.Generic.Dictionary<int,long>
 	// System.Collections.Generic.Dictionary<int,object>
 	// System.Collections.Generic.Dictionary<long,ET.EntityRef<object>>
 	// System.Collections.Generic.Dictionary<long,ET.LSInput>
 	// System.Collections.Generic.Dictionary<long,object>
+	// System.Collections.Generic.Dictionary<object,int>
 	// System.Collections.Generic.Dictionary<object,long>
 	// System.Collections.Generic.Dictionary<object,object>
 	// System.Collections.Generic.Dictionary<ushort,object>
@@ -349,24 +422,30 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.EqualityComparer<object>
 	// System.Collections.Generic.EqualityComparer<uint>
 	// System.Collections.Generic.EqualityComparer<ushort>
+	// System.Collections.Generic.HashSet.Enumerator<int>
 	// System.Collections.Generic.HashSet.Enumerator<object>
 	// System.Collections.Generic.HashSet.Enumerator<ushort>
+	// System.Collections.Generic.HashSet<int>
 	// System.Collections.Generic.HashSet<object>
 	// System.Collections.Generic.HashSet<ushort>
+	// System.Collections.Generic.HashSetEqualityComparer<int>
 	// System.Collections.Generic.HashSetEqualityComparer<object>
 	// System.Collections.Generic.HashSetEqualityComparer<ushort>
 	// System.Collections.Generic.ICollection<DotRecast.Detour.StraightPathItem>
 	// System.Collections.Generic.ICollection<ET.RpcInfo>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<int,ET.RpcInfo>>
+	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<int,int>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<int,long>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<long,ET.EntityRef<object>>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<long,ET.LSInput>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<long,object>>
+	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,int>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,long>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,object>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<ushort,object>>
 	// System.Collections.Generic.ICollection<Unity.Mathematics.float3>
+	// System.Collections.Generic.ICollection<int>
 	// System.Collections.Generic.ICollection<long>
 	// System.Collections.Generic.ICollection<object>
 	// System.Collections.Generic.ICollection<ushort>
@@ -381,30 +460,36 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.IEnumerable<DotRecast.Detour.StraightPathItem>
 	// System.Collections.Generic.IEnumerable<ET.RpcInfo>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<int,ET.RpcInfo>>
+	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<int,int>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<int,long>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<long,ET.EntityRef<object>>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<long,ET.LSInput>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<long,object>>
+	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,int>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,long>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,object>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<ushort,object>>
 	// System.Collections.Generic.IEnumerable<Unity.Mathematics.float3>
+	// System.Collections.Generic.IEnumerable<int>
 	// System.Collections.Generic.IEnumerable<long>
 	// System.Collections.Generic.IEnumerable<object>
 	// System.Collections.Generic.IEnumerable<ushort>
 	// System.Collections.Generic.IEnumerator<DotRecast.Detour.StraightPathItem>
 	// System.Collections.Generic.IEnumerator<ET.RpcInfo>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<int,ET.RpcInfo>>
+	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<int,int>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<int,long>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<long,ET.EntityRef<object>>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<long,ET.LSInput>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<long,object>>
+	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,int>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,long>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,object>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<ushort,object>>
 	// System.Collections.Generic.IEnumerator<Unity.Mathematics.float3>
+	// System.Collections.Generic.IEnumerator<int>
 	// System.Collections.Generic.IEnumerator<long>
 	// System.Collections.Generic.IEnumerator<object>
 	// System.Collections.Generic.IEnumerator<ushort>
@@ -418,27 +503,35 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.IList<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Collections.Generic.IList<System.Collections.Generic.KeyValuePair<long,object>>
 	// System.Collections.Generic.IList<Unity.Mathematics.float3>
+	// System.Collections.Generic.IList<int>
 	// System.Collections.Generic.IList<long>
 	// System.Collections.Generic.IList<object>
 	// System.Collections.Generic.KeyValuePair<int,ET.RpcInfo>
+	// System.Collections.Generic.KeyValuePair<int,int>
 	// System.Collections.Generic.KeyValuePair<int,long>
 	// System.Collections.Generic.KeyValuePair<int,object>
 	// System.Collections.Generic.KeyValuePair<long,ET.EntityRef<object>>
 	// System.Collections.Generic.KeyValuePair<long,ET.LSInput>
 	// System.Collections.Generic.KeyValuePair<long,object>
+	// System.Collections.Generic.KeyValuePair<object,int>
 	// System.Collections.Generic.KeyValuePair<object,long>
 	// System.Collections.Generic.KeyValuePair<object,object>
 	// System.Collections.Generic.KeyValuePair<ushort,object>
+	// System.Collections.Generic.LinkedList.Enumerator<object>
+	// System.Collections.Generic.LinkedList<object>
+	// System.Collections.Generic.LinkedListNode<object>
 	// System.Collections.Generic.List.Enumerator<DotRecast.Detour.StraightPathItem>
 	// System.Collections.Generic.List.Enumerator<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Collections.Generic.List.Enumerator<System.Collections.Generic.KeyValuePair<long,object>>
 	// System.Collections.Generic.List.Enumerator<Unity.Mathematics.float3>
+	// System.Collections.Generic.List.Enumerator<int>
 	// System.Collections.Generic.List.Enumerator<long>
 	// System.Collections.Generic.List.Enumerator<object>
 	// System.Collections.Generic.List<DotRecast.Detour.StraightPathItem>
 	// System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<long,object>>
 	// System.Collections.Generic.List<Unity.Mathematics.float3>
+	// System.Collections.Generic.List<int>
 	// System.Collections.Generic.List<long>
 	// System.Collections.Generic.List<object>
 	// System.Collections.Generic.ObjectComparer<DotRecast.Detour.StraightPathItem>
@@ -462,7 +555,9 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.ObjectEqualityComparer<object>
 	// System.Collections.Generic.ObjectEqualityComparer<uint>
 	// System.Collections.Generic.ObjectEqualityComparer<ushort>
+	// System.Collections.Generic.Queue.Enumerator<int>
 	// System.Collections.Generic.Queue.Enumerator<object>
+	// System.Collections.Generic.Queue<int>
 	// System.Collections.Generic.Queue<object>
 	// System.Collections.Generic.SortedDictionary.<>c__DisplayClass34_0<int,object>
 	// System.Collections.Generic.SortedDictionary.<>c__DisplayClass34_0<long,object>
@@ -520,6 +615,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.ObjectModel.ReadOnlyCollection<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Collections.ObjectModel.ReadOnlyCollection<System.Collections.Generic.KeyValuePair<long,object>>
 	// System.Collections.ObjectModel.ReadOnlyCollection<Unity.Mathematics.float3>
+	// System.Collections.ObjectModel.ReadOnlyCollection<int>
 	// System.Collections.ObjectModel.ReadOnlyCollection<long>
 	// System.Collections.ObjectModel.ReadOnlyCollection<object>
 	// System.Comparison<DotRecast.Detour.StraightPathItem>
@@ -538,10 +634,12 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Func<object>
 	// System.Linq.Buffer<ET.RpcInfo>
 	// System.Linq.Buffer<object>
+	// System.Nullable<YIUIFramework.YIUIBindVo>
 	// System.Predicate<DotRecast.Detour.StraightPathItem>
 	// System.Predicate<System.Collections.Generic.KeyValuePair<int,object>>
 	// System.Predicate<System.Collections.Generic.KeyValuePair<long,object>>
 	// System.Predicate<Unity.Mathematics.float3>
+	// System.Predicate<int>
 	// System.Predicate<long>
 	// System.Predicate<object>
 	// System.Predicate<ushort>
@@ -566,10 +664,46 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.ValueTuple<uint,object>
 	// System.ValueTuple<uint,uint>
 	// System.ValueTuple<ushort,object>
+	// UnityEngine.Events.UnityAction<object>
+	// YIUIFramework.LinkedListPool.<>c<object>
+	// YIUIFramework.LinkedListPool<object>
+	// YIUIFramework.ObjAsyncCache<object>
+	// YIUIFramework.ObjCache<object>
+	// YIUIFramework.ObjectPool<object>
+	// YIUIFramework.Singleton<object>
+	// YIUIFramework.UIDataValueBase<byte>
+	// YIUIFramework.UIDataValueBase<int>
+	// YIUIFramework.UIDataValueBase<object>
+	// YIUIFramework.UIEventDelegate<byte>
+	// YIUIFramework.UIEventDelegate<int>
+	// YIUIFramework.UIEventDelegate<object>
+	// YIUIFramework.UIEventHandleP1<byte>
+	// YIUIFramework.UIEventHandleP1<int>
+	// YIUIFramework.UIEventHandleP1<object>
+	// YIUIFramework.UIEventP1<byte>
+	// YIUIFramework.UIEventP1<int>
+	// YIUIFramework.UIEventP1<object>
+	// YIUIFramework.YIUILoopScroll.<>c__DisplayClass83_0<int,object>
+	// YIUIFramework.YIUILoopScroll.<>c__DisplayClass83_0<object,object>
+	// YIUIFramework.YIUILoopScroll.ListItemRenderer<int,object>
+	// YIUIFramework.YIUILoopScroll.ListItemRenderer<object,object>
+	// YIUIFramework.YIUILoopScroll.OnClickItemEvent<int,object>
+	// YIUIFramework.YIUILoopScroll.OnClickItemEvent<object,object>
+	// YIUIFramework.YIUILoopScroll<int,object>
+	// YIUIFramework.YIUILoopScroll<object,object>
 	// }}
 
 	public void RefMethods()
 	{
+		// ET.ETTask ET.Client.YIUIEventSystem.UIEvent<ET.Client.EventPutTipsView>(ET.Fiber,ET.Client.EventPutTipsView)
+		// ET.ETTask ET.Client.YIUIEventSystem.UIEvent<ET.Client.OnClickChildListEvent>(ET.Fiber,ET.Client.OnClickChildListEvent)
+		// ET.ETTask ET.Client.YIUIEventSystem.UIEvent<ET.Client.OnClickItemEvent>(ET.Fiber,ET.Client.OnClickItemEvent)
+		// ET.ETTask ET.Client.YIUIEventSystem.UIEvent<ET.Client.OnClickParentListEvent>(ET.Fiber,ET.Client.OnClickParentListEvent)
+		// ET.ETTask ET.Client.YIUIEventSystem.UIEvent<ET.Client.OnGMEventClose>(ET.Fiber,ET.Client.OnGMEventClose)
+		// ET.ETTask<bool> ET.Client.YIUIMgrComponentSystem.ClosePanelAsync<object>(ET.Client.YIUIMgrComponent,bool,bool)
+		// ET.ETTask<object> ET.Client.YIUIMgrComponentSystem.OpenPanelAsync<object,object,object>(ET.Client.YIUIMgrComponent,object,object)
+		// ET.ETTask<object> ET.Client.YIUIMgrComponentSystem.OpenPanelAsync<object>(ET.Client.YIUIMgrComponent)
+		// ET.ETTask<object> ET.Client.YIUIPanelComponentSystem.OpenViewAsync<object>(ET.Client.YIUIPanelComponent)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.A2NetClient_MessageHandler.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.A2NetClient_MessageHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.AfterCreateClientScene_AddComponent.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.AfterCreateClientScene_AddComponent.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.AfterCreateClientScene_LSAddComponent.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.AfterCreateClientScene_LSAddComponent.<Run>d__0&)
@@ -586,6 +720,9 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.M2C_StopHandler.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.M2C_StopHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.NetClient2Main_SessionDisposeHandler.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.NetClient2Main_SessionDisposeHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.OneFrameInputsHandler.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.OneFrameInputsHandler.<Run>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__6>(ET.ETTaskCompleted&,ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__6&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__7>(ET.ETTaskCompleted&,ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__7&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__8>(ET.ETTaskCompleted&,ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__8&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.Room2C_AdjustUpdateTimeHandler.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.Room2C_AdjustUpdateTimeHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.Room2C_CheckHashFailHandler.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.Room2C_CheckHashFailHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.Room2C_EnterMapHandler.<Run>d__0>(ET.ETTaskCompleted&,ET.Client.Room2C_EnterMapHandler.<Run>d__0&)
@@ -607,21 +744,28 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.EnterMapHelper.<Match>d__1>(object&,ET.Client.EnterMapHelper.<Match>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.EntryEvent3_InitClient.<Run>d__0>(object&,ET.Client.EntryEvent3_InitClient.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.G2C_ReconnectHandler.<Run>d__0>(object&,ET.Client.G2C_ReconnectHandler.<Run>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.GMCommandComponentSystem.<Run>d__5>(object&,ET.Client.GMCommandComponentSystem.<Run>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.GMCommandItemComponentSystem.<WaitRefresh>d__6>(object&,ET.Client.GMCommandItemComponentSystem.<WaitRefresh>d__6&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.GMViewComponentSystem.<YIUIEvent>d__5>(object&,ET.Client.GMViewComponentSystem.<YIUIEvent>d__5&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LSSceneChangeHelper.<SceneChangeTo>d__0>(object&,ET.Client.LSSceneChangeHelper.<SceneChangeTo>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LSSceneChangeHelper.<SceneChangeToReconnect>d__2>(object&,ET.Client.LSSceneChangeHelper.<SceneChangeToReconnect>d__2&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LSSceneChangeHelper.<SceneChangeToReplay>d__1>(object&,ET.Client.LSSceneChangeHelper.<SceneChangeToReplay>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LSSceneChangeStart_AddComponent.<Run>d__0>(object&,ET.Client.LSSceneChangeStart_AddComponent.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LSSceneInitFinish_Finish.<Run>d__0>(object&,ET.Client.LSSceneInitFinish_Finish.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LSUnitViewComponentSystem.<InitAsync>d__2>(object&,ET.Client.LSUnitViewComponentSystem.<InitAsync>d__2&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LobbyPanelComponentSystem.<OnEventEnterAction>d__6>(object&,ET.Client.LobbyPanelComponentSystem.<OnEventEnterAction>d__6&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LoginFinish_CreateLobbyUI.<Run>d__0>(object&,ET.Client.LoginFinish_CreateLobbyUI.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LoginFinish_CreateUILSLobby.<Run>d__0>(object&,ET.Client.LoginFinish_CreateUILSLobby.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LoginFinish_RemoveLoginUI.<Run>d__0>(object&,ET.Client.LoginFinish_RemoveLoginUI.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LoginFinish_RemoveUILSLogin.<Run>d__0>(object&,ET.Client.LoginFinish_RemoveUILSLogin.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LoginHelper.<Login>d__0>(object&,ET.Client.LoginHelper.<Login>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.LoginPanelComponentSystem.<OnEventLoginAction>d__8>(object&,ET.Client.LoginPanelComponentSystem.<OnEventLoginAction>d__8&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.M2C_PathfindingResultHandler.<Run>d__0>(object&,ET.Client.M2C_PathfindingResultHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.M2C_StartSceneChangeHandler.<Run>d__0>(object&,ET.Client.M2C_StartSceneChangeHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.Main2NetClient_LoginHandler.<Run>d__0>(object&,ET.Client.Main2NetClient_LoginHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.Match2G_NotifyMatchSuccessHandler.<Run>d__0>(object&,ET.Client.Match2G_NotifyMatchSuccessHandler.<Run>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.MessageTipsViewComponentSystem.<YIUICloseTween>d__7>(object&,ET.Client.MessageTipsViewComponentSystem.<YIUICloseTween>d__7&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.MessageTipsViewComponentSystem.<YIUIOpenTween>d__6>(object&,ET.Client.MessageTipsViewComponentSystem.<YIUIOpenTween>d__6&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.MoveHelper.<MoveToAsync>d__1>(object&,ET.Client.MoveHelper.<MoveToAsync>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.PingComponentSystem.<PingAsync>d__2>(object&,ET.Client.PingComponentSystem.<PingAsync>d__2&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.ResourcesLoaderComponentSystem.<LoadSceneAsync>d__5>(object&,ET.Client.ResourcesLoaderComponentSystem.<LoadSceneAsync>d__5&)
@@ -632,6 +776,13 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.SceneChangeFinishEvent_CreateUIHelp.<Run>d__0>(object&,ET.Client.SceneChangeFinishEvent_CreateUIHelp.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.SceneChangeHelper.<SceneChangeTo>d__0>(object&,ET.Client.SceneChangeHelper.<SceneChangeTo>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.SceneChangeStart_AddComponent.<Run>d__0>(object&,ET.Client.SceneChangeStart_AddComponent.<Run>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TextTipsViewComponentSystem.<PlayAnimation>d__6>(object&,ET.Client.TextTipsViewComponentSystem.<PlayAnimation>d__6&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TipsHelper.<CloseTipsView>d__5>(object&,ET.Client.TipsHelper.<CloseTipsView>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TipsHelper.<Open2NewVo>d__4<object>>(object&,ET.Client.TipsHelper.<Open2NewVo>d__4<object>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TipsHelper.<Open>d__0<object>>(object&,ET.Client.TipsHelper.<Open>d__0<object>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TipsHelper.<Open>d__2<object>>(object&,ET.Client.TipsHelper.<Open>d__2<object>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TipsPanelComponentSystem.<PutTips>d__9>(object&,ET.Client.TipsPanelComponentSystem.<PutTips>d__9&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.TipsPanelComponentSystem.<YIUIEvent>d__6>(object&,ET.Client.TipsPanelComponentSystem.<YIUIEvent>d__6&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.UILSLobbyComponentSystem.<EnterMap>d__1>(object&,ET.Client.UILSLobbyComponentSystem.<EnterMap>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.Client.UILobbyComponentSystem.<EnterMap>d__1>(object&,ET.Client.UILobbyComponentSystem.<EnterMap>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.ConsoleComponentSystem.<Start>d__1>(object&,ET.ConsoleComponentSystem.<Start>d__1&)
@@ -647,6 +798,25 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.ReloadConfigConsoleHandler.<Run>d__0>(object&,ET.ReloadConfigConsoleHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,ET.SessionSystem.<>c__DisplayClass4_0.<<Call>g__Timeout|0>d>(object&,ET.SessionSystem.<>c__DisplayClass4_0.<<Call>g__Timeout|0>d&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<System.ValueTuple<uint,object>>.AwaitUnsafeOnCompleted<object,ET.Client.RouterHelper.<GetRouterAddress>d__1>(object&,ET.Client.RouterHelper.<GetRouterAddress>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.CommonPanelComponentSystem.<YIUIOpen>d__5>(ET.ETTaskCompleted&,ET.Client.CommonPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.GMPanelComponentSystem.<YIUIOpen>d__5>(ET.ETTaskCompleted&,ET.Client.GMPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.GMViewComponentSystem.<YIUIOpen>d__6>(ET.ETTaskCompleted&,ET.Client.GMViewComponentSystem.<YIUIOpen>d__6&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.GM_Test.<Run>d__1>(ET.ETTaskCompleted&,ET.Client.GM_Test.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.GM_TipsTest1.<Run>d__1>(ET.ETTaskCompleted&,ET.Client.GM_TipsTest1.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.GM_TipsTest2.<Run>d__1>(ET.ETTaskCompleted&,ET.Client.GM_TipsTest2.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.GM_TipsTest3.<Run>d__1>(ET.ETTaskCompleted&,ET.Client.GM_TipsTest3.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.GM_TipsTest4.<Run>d__1>(ET.ETTaskCompleted&,ET.Client.GM_TipsTest4.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.GM_TipsTest5.<Run>d__1>(ET.ETTaskCompleted&,ET.Client.GM_TipsTest5.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.LobbyPanelComponentSystem.<YIUIOpen>d__5>(ET.ETTaskCompleted&,ET.Client.LobbyPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.LoginPanelComponentSystem.<YIUIOpen>d__5>(ET.ETTaskCompleted&,ET.Client.LoginPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.MainPanelComponentSystem.<YIUIOpen>d__5>(ET.ETTaskCompleted&,ET.Client.MainPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__5>(ET.ETTaskCompleted&,ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__8>(ET.ETTaskCompleted&,ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__8&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.RedDotPanelComponentSystem.<YIUIOpen>d__5>(ET.ETTaskCompleted&,ET.Client.RedDotPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,ET.Client.TextTipsViewComponentSystem.<YIUIOpen>d__5>(ET.ETTaskCompleted&,ET.Client.TextTipsViewComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<object,ET.Client.GM_OpenReddotPanel.<Run>d__1>(object&,ET.Client.GM_OpenReddotPanel.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<object,ET.Client.TipsPanelComponentSystem.<OpenTips>d__8>(object&,ET.Client.TipsPanelComponentSystem.<OpenTips>d__8&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<object,ET.Client.TipsPanelComponentSystem.<YIUIOpen>d__5>(object&,ET.Client.TipsPanelComponentSystem.<YIUIOpen>d__5&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<object,ET.MoveComponentSystem.<MoveToAsync>d__5>(object&,ET.MoveComponentSystem.<MoveToAsync>d__5&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<int>.AwaitUnsafeOnCompleted<object,ET.Client.MoveHelper.<MoveToAsync>d__0>(object&,ET.Client.MoveHelper.<MoveToAsync>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<long>.AwaitUnsafeOnCompleted<object,ET.Client.ClientSenderCompnentSystem.<LoginAsync>d__3>(object&,ET.Client.ClientSenderCompnentSystem.<LoginAsync>d__3&)
@@ -658,6 +828,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.ResourcesLoaderComponentSystem.<LoadAllAssetsAsync>d__4<object>>(object&,ET.Client.ResourcesLoaderComponentSystem.<LoadAllAssetsAsync>d__4<object>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.ResourcesLoaderComponentSystem.<LoadAssetAsync>d__3<object>>(object&,ET.Client.ResourcesLoaderComponentSystem.<LoadAssetAsync>d__3<object>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.RouterHelper.<CreateRouterSession>d__0>(object&,ET.Client.RouterHelper.<CreateRouterSession>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.TipsPanelComponentSystem.<>c__DisplayClass8_0.<<OpenTips>g__Create|0>d>(object&,ET.Client.TipsPanelComponentSystem.<>c__DisplayClass8_0.<<OpenTips>g__Create|0>d&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.UIComponentSystem.<Create>d__1>(object&,ET.Client.UIComponentSystem.<Create>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.UIGlobalComponentSystem.<OnCreate>d__1>(object&,ET.Client.UIGlobalComponentSystem.<OnCreate>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,ET.Client.UIHelpEvent.<OnCreate>d__0>(object&,ET.Client.UIHelpEvent.<OnCreate>d__0&)
@@ -691,17 +862,22 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.EntryEvent3_InitClient.<Run>d__0>(ET.Client.EntryEvent3_InitClient.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.FiberInit_NetClient.<Handle>d__0>(ET.Client.FiberInit_NetClient.<Handle>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.G2C_ReconnectHandler.<Run>d__0>(ET.Client.G2C_ReconnectHandler.<Run>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.GMCommandComponentSystem.<Run>d__5>(ET.Client.GMCommandComponentSystem.<Run>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.GMCommandItemComponentSystem.<WaitRefresh>d__6>(ET.Client.GMCommandItemComponentSystem.<WaitRefresh>d__6&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.GMViewComponentSystem.<YIUIEvent>d__5>(ET.Client.GMViewComponentSystem.<YIUIEvent>d__5&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LSSceneChangeHelper.<SceneChangeTo>d__0>(ET.Client.LSSceneChangeHelper.<SceneChangeTo>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LSSceneChangeHelper.<SceneChangeToReconnect>d__2>(ET.Client.LSSceneChangeHelper.<SceneChangeToReconnect>d__2&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LSSceneChangeHelper.<SceneChangeToReplay>d__1>(ET.Client.LSSceneChangeHelper.<SceneChangeToReplay>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LSSceneChangeStart_AddComponent.<Run>d__0>(ET.Client.LSSceneChangeStart_AddComponent.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LSSceneInitFinish_Finish.<Run>d__0>(ET.Client.LSSceneInitFinish_Finish.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LSUnitViewComponentSystem.<InitAsync>d__2>(ET.Client.LSUnitViewComponentSystem.<InitAsync>d__2&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LobbyPanelComponentSystem.<OnEventEnterAction>d__6>(ET.Client.LobbyPanelComponentSystem.<OnEventEnterAction>d__6&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LoginFinish_CreateLobbyUI.<Run>d__0>(ET.Client.LoginFinish_CreateLobbyUI.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LoginFinish_CreateUILSLobby.<Run>d__0>(ET.Client.LoginFinish_CreateUILSLobby.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LoginFinish_RemoveLoginUI.<Run>d__0>(ET.Client.LoginFinish_RemoveLoginUI.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LoginFinish_RemoveUILSLogin.<Run>d__0>(ET.Client.LoginFinish_RemoveUILSLogin.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LoginHelper.<Login>d__0>(ET.Client.LoginHelper.<Login>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.LoginPanelComponentSystem.<OnEventLoginAction>d__8>(ET.Client.LoginPanelComponentSystem.<OnEventLoginAction>d__8&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.M2C_CreateMyUnitHandler.<Run>d__0>(ET.Client.M2C_CreateMyUnitHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.M2C_CreateUnitsHandler.<Run>d__0>(ET.Client.M2C_CreateUnitsHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.M2C_PathfindingResultHandler.<Run>d__0>(ET.Client.M2C_PathfindingResultHandler.<Run>d__0&)
@@ -710,10 +886,15 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.M2C_StopHandler.<Run>d__0>(ET.Client.M2C_StopHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.Main2NetClient_LoginHandler.<Run>d__0>(ET.Client.Main2NetClient_LoginHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.Match2G_NotifyMatchSuccessHandler.<Run>d__0>(ET.Client.Match2G_NotifyMatchSuccessHandler.<Run>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.MessageTipsViewComponentSystem.<YIUICloseTween>d__7>(ET.Client.MessageTipsViewComponentSystem.<YIUICloseTween>d__7&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.MessageTipsViewComponentSystem.<YIUIOpenTween>d__6>(ET.Client.MessageTipsViewComponentSystem.<YIUIOpenTween>d__6&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.MoveHelper.<MoveToAsync>d__1>(ET.Client.MoveHelper.<MoveToAsync>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.NetClient2Main_SessionDisposeHandler.<Run>d__0>(ET.Client.NetClient2Main_SessionDisposeHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.OneFrameInputsHandler.<Run>d__0>(ET.Client.OneFrameInputsHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.PingComponentSystem.<PingAsync>d__2>(ET.Client.PingComponentSystem.<PingAsync>d__2&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__6>(ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__6&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__7>(ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__7&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__8>(ET.Client.RedDotPanelComponentSystem.<YIUIEvent>d__8&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.ResourcesLoaderComponentSystem.<LoadSceneAsync>d__5>(ET.Client.ResourcesLoaderComponentSystem.<LoadSceneAsync>d__5&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.Room2C_AdjustUpdateTimeHandler.<Run>d__0>(ET.Client.Room2C_AdjustUpdateTimeHandler.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.Room2C_CheckHashFailHandler.<Run>d__0>(ET.Client.Room2C_CheckHashFailHandler.<Run>d__0&)
@@ -725,9 +906,21 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.SceneChangeFinishEvent_CreateUIHelp.<Run>d__0>(ET.Client.SceneChangeFinishEvent_CreateUIHelp.<Run>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.SceneChangeHelper.<SceneChangeTo>d__0>(ET.Client.SceneChangeHelper.<SceneChangeTo>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.SceneChangeStart_AddComponent.<Run>d__0>(ET.Client.SceneChangeStart_AddComponent.<Run>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TextTipsViewComponentSystem.<PlayAnimation>d__6>(ET.Client.TextTipsViewComponentSystem.<PlayAnimation>d__6&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TipsHelper.<CloseTipsView>d__5>(ET.Client.TipsHelper.<CloseTipsView>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TipsHelper.<Open2NewVo>d__4<object>>(ET.Client.TipsHelper.<Open2NewVo>d__4<object>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TipsHelper.<Open>d__0<object>>(ET.Client.TipsHelper.<Open>d__0<object>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TipsHelper.<Open>d__2<object>>(ET.Client.TipsHelper.<Open>d__2<object>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TipsPanelComponentSystem.<PutTips>d__9>(ET.Client.TipsPanelComponentSystem.<PutTips>d__9&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.TipsPanelComponentSystem.<YIUIEvent>d__6>(ET.Client.TipsPanelComponentSystem.<YIUIEvent>d__6&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.UIHelper.<Remove>d__1>(ET.Client.UIHelper.<Remove>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.UILSLobbyComponentSystem.<EnterMap>d__1>(ET.Client.UILSLobbyComponentSystem.<EnterMap>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.UILobbyComponentSystem.<EnterMap>d__1>(ET.Client.UILobbyComponentSystem.<EnterMap>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.EventPutTipsView>>(ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.EventPutTipsView>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.OnClickChildListEvent>>(ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.OnClickChildListEvent>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.OnClickItemEvent>>(ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.OnClickItemEvent>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.OnClickParentListEvent>>(ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.OnClickParentListEvent>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.OnGMEventClose>>(ET.Client.YIUIEventSystem.<UIEvent>d__15<ET.Client.OnGMEventClose>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.ConsoleComponentSystem.<Start>d__1>(ET.ConsoleComponentSystem.<Start>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.Entry.<StartAsync>d__2>(ET.Entry.<StartAsync>d__2&)
 		// System.Void ET.ETAsyncTaskMethodBuilder.Start<ET.EntryEvent1_InitShare.<Run>d__0>(ET.EntryEvent1_InitShare.<Run>d__0&)
@@ -754,6 +947,26 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_SceneChangeFinish>.Start<ET.ObjectWaitSystem.<Wait>d__4<ET.Client.Wait_SceneChangeFinish>>(ET.ObjectWaitSystem.<Wait>d__4<ET.Client.Wait_SceneChangeFinish>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_UnitStop>.Start<ET.ObjectWaitSystem.<Wait>d__4<ET.Client.Wait_UnitStop>>(ET.ObjectWaitSystem.<Wait>d__4<ET.Client.Wait_UnitStop>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<System.ValueTuple<uint,object>>.Start<ET.Client.RouterHelper.<GetRouterAddress>d__1>(ET.Client.RouterHelper.<GetRouterAddress>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.CommonPanelComponentSystem.<YIUIOpen>d__5>(ET.Client.CommonPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GMPanelComponentSystem.<YIUIOpen>d__5>(ET.Client.GMPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GMViewComponentSystem.<YIUIOpen>d__6>(ET.Client.GMViewComponentSystem.<YIUIOpen>d__6&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GM_OpenReddotPanel.<Run>d__1>(ET.Client.GM_OpenReddotPanel.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GM_Test.<Run>d__1>(ET.Client.GM_Test.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GM_TipsTest1.<Run>d__1>(ET.Client.GM_TipsTest1.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GM_TipsTest2.<Run>d__1>(ET.Client.GM_TipsTest2.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GM_TipsTest3.<Run>d__1>(ET.Client.GM_TipsTest3.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GM_TipsTest4.<Run>d__1>(ET.Client.GM_TipsTest4.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.GM_TipsTest5.<Run>d__1>(ET.Client.GM_TipsTest5.<Run>d__1&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.LobbyPanelComponentSystem.<YIUIOpen>d__5>(ET.Client.LobbyPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.LoginPanelComponentSystem.<YIUIOpen>d__5>(ET.Client.LoginPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.MainPanelComponentSystem.<YIUIOpen>d__5>(ET.Client.MainPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__5>(ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__8>(ET.Client.MessageTipsViewComponentSystem.<YIUIOpen>d__8&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.RedDotPanelComponentSystem.<YIUIOpen>d__5>(ET.Client.RedDotPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.TextTipsViewComponentSystem.<YIUIOpen>d__5>(ET.Client.TextTipsViewComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.TipsPanelComponentSystem.<OpenTips>d__8>(ET.Client.TipsPanelComponentSystem.<OpenTips>d__8&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.TipsPanelComponentSystem.<YIUIOpen>d__5>(ET.Client.TipsPanelComponentSystem.<YIUIOpen>d__5&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.Client.YIUIMgrComponentSystem.<ClosePanelAsync>d__13<object>>(ET.Client.YIUIMgrComponentSystem.<ClosePanelAsync>d__13<object>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<ET.MoveComponentSystem.<MoveToAsync>d__5>(ET.MoveComponentSystem.<MoveToAsync>d__5&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<int>.Start<ET.Client.MoveHelper.<MoveToAsync>d__0>(ET.Client.MoveHelper.<MoveToAsync>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<long>.Start<ET.Client.ClientSenderCompnentSystem.<LoginAsync>d__3>(ET.Client.ClientSenderCompnentSystem.<LoginAsync>d__3&)
@@ -762,6 +975,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.ResourcesLoaderComponentSystem.<LoadAllAssetsAsync>d__4<object>>(ET.Client.ResourcesLoaderComponentSystem.<LoadAllAssetsAsync>d__4<object>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.ResourcesLoaderComponentSystem.<LoadAssetAsync>d__3<object>>(ET.Client.ResourcesLoaderComponentSystem.<LoadAssetAsync>d__3<object>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.RouterHelper.<CreateRouterSession>d__0>(ET.Client.RouterHelper.<CreateRouterSession>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.TipsPanelComponentSystem.<>c__DisplayClass8_0.<<OpenTips>g__Create|0>d>(ET.Client.TipsPanelComponentSystem.<>c__DisplayClass8_0.<<OpenTips>g__Create|0>d&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.UIComponentSystem.<Create>d__1>(ET.Client.UIComponentSystem.<Create>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.UIGlobalComponentSystem.<OnCreate>d__1>(ET.Client.UIGlobalComponentSystem.<OnCreate>d__1&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.UIHelpEvent.<OnCreate>d__0>(ET.Client.UIHelpEvent.<OnCreate>d__0&)
@@ -771,6 +985,9 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.UILSRoomEvent.<OnCreate>d__0>(ET.Client.UILSRoomEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.UILobbyEvent.<OnCreate>d__0>(ET.Client.UILobbyEvent.<OnCreate>d__0&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.UILoginEvent.<OnCreate>d__0>(ET.Client.UILoginEvent.<OnCreate>d__0&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.YIUIMgrComponentSystem.<OpenPanelAsync>d__22<object>>(ET.Client.YIUIMgrComponentSystem.<OpenPanelAsync>d__22<object>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.YIUIMgrComponentSystem.<OpenPanelAsync>d__25<object,object,object>>(ET.Client.YIUIMgrComponentSystem.<OpenPanelAsync>d__25<object,object,object>&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.Client.YIUIPanelComponentSystem.<OpenViewAsync>d__10<object>>(ET.Client.YIUIPanelComponentSystem.<OpenViewAsync>d__10<object>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.ObjectWaitSystem.<Wait>d__4<object>>(ET.ObjectWaitSystem.<Wait>d__4<object>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.ObjectWaitSystem.<Wait>d__5<object>>(ET.ObjectWaitSystem.<Wait>d__5<object>&)
 		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<ET.RpcInfo.<Wait>d__7>(ET.RpcInfo.<Wait>d__7&)
@@ -918,6 +1135,8 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// object System.Activator.CreateInstance<object>()
 		// byte[] System.Array.Empty<byte>()
 		// object[] System.Array.Empty<object>()
+		// bool System.Enum.TryParse<int>(string,bool,int&)
+		// bool System.Enum.TryParse<int>(string,int&)
 		// int System.HashCode.Combine<TrueSync.TSVector2,int>(TrueSync.TSVector2,int)
 		// int System.HashCode.Combine<object>(object)
 		// ET.RpcInfo[] System.Linq.Enumerable.ToArray<ET.RpcInfo>(System.Collections.Generic.IEnumerable<ET.RpcInfo>)
@@ -964,6 +1183,24 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// object UnityEngine.GameObject.GetComponent<object>()
 		// object UnityEngine.Object.Instantiate<object>(object,UnityEngine.Transform)
 		// object UnityEngine.Object.Instantiate<object>(object,UnityEngine.Transform,bool)
+		// YIUIFramework.ParamGetResult YIUIFramework.ParamVo.Get<byte>(byte&,int,byte)
+		// YIUIFramework.ParamGetResult YIUIFramework.ParamVo.Get<float>(float&,int,float)
+		// YIUIFramework.ParamGetResult YIUIFramework.ParamVo.Get<int>(int&,int,int)
+		// YIUIFramework.ParamGetResult YIUIFramework.ParamVo.Get<long>(long&,int,long)
+		// YIUIFramework.ParamGetResult YIUIFramework.ParamVo.Get<object>(object&,int,object)
+		// byte YIUIFramework.ParamVo.Get<byte>(int,byte)
+		// float YIUIFramework.ParamVo.Get<float>(int,float)
+		// int YIUIFramework.ParamVo.Get<int>(int,int)
+		// long YIUIFramework.ParamVo.Get<long>(int,long)
+		// object YIUIFramework.ParamVo.Get<object>(int,object)
+		// bool YIUIFramework.StrConv.ToNumber<byte>(string,byte&)
+		// bool YIUIFramework.StrConv.ToNumber<float>(string,float&)
+		// bool YIUIFramework.StrConv.ToNumber<int>(string,int&)
+		// bool YIUIFramework.StrConv.ToNumber<long>(string,long&)
+		// bool YIUIFramework.StrConv.ToNumber<object>(string,object&)
+		// object YIUIFramework.UIBindComponentTable.FindComponent<object>(string)
+		// object YIUIFramework.UIBindDataTable.FindDataValue<object>(string)
+		// object YIUIFramework.UIBindEventTable.FindEvent<object>(string)
 		// YooAsset.AllAssetsHandle YooAsset.ResourcePackage.LoadAllAssetsAsync<object>(string,uint)
 		// YooAsset.AssetHandle YooAsset.ResourcePackage.LoadAssetAsync<object>(string,uint)
 	}

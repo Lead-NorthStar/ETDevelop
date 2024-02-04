@@ -8,7 +8,6 @@
         "MemoryPack",
         "YooAsset",
         "YooAsset.Editor",
-        "BetterStreamingAssets",
         "YIUIFramework"
     ],
     "includePlatforms": [],
