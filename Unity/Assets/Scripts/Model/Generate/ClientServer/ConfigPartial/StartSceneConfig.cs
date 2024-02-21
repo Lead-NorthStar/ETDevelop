@@ -131,7 +131,7 @@ namespace ET
         partial void PostInit()
         {
             this.ActorId = new ActorId(this.Process, this.Id, 1);
-            this.Type = EnumHelper.FromString<SceneType>(this.SceneType);
+            this.Type    = EnumHelper.FromString<SceneType>(this.SceneType);
         }
     }
 }

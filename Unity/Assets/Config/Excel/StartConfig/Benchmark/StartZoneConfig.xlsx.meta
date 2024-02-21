@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Unity/Assets/Config/Excel/StartConfig/Benchmark/StartZoneConfig.xlsx.meta
 guid: 4aa9691dca0acf34b82a1d5998e9e6a7
+========
+guid: d312f806629e77b4e81fc084dd308398
+>>>>>>>> ET-YIUI/YIUI-ET8.1:Unity/Assets/Config/Excel/StartConfig/Benchmark/StartProcessConfig.xlsx.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

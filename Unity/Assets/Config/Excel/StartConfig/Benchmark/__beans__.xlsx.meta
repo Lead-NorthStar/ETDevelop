@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Unity/Assets/Config/Excel/StartConfig/Benchmark/__beans__.xlsx.meta
 guid: 07f7093bf4fe1c04ca75134cdfd50eea
+========
+guid: a6d0b5a16fe1ece429549b75aa41b251
+>>>>>>>> ET-YIUI/YIUI-ET8.1:Unity/Assets/Config/Excel/StartConfig/Benchmark/StartSceneConfig.xlsx.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
