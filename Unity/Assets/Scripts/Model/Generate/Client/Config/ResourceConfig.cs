@@ -37,15 +37,9 @@ namespace ET
         /// </summary>
         public readonly string Url;
 
-
         public const int __ID__ = -1505018608;
-        public override int GetTypeId() => __ID__;
 
-        public  void ResolveRef()
-        {
-            
-            
-        }
+        public override int GetTypeId() => __ID__;
 
         public override string ToString()
         {

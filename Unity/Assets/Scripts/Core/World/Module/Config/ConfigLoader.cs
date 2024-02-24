@@ -1,8 +1,9 @@
 ﻿using Luban;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
+#if DOTNET || UNITY_STANDALONE
 using System.Threading.Tasks;
+#endif
 
 namespace ET
 {
@@ -20,100 +21,45 @@ namespace ET
             public string ConfigName;
         }
 
-        private readonly ConcurrentDictionary<Type, IConfig> allConfig = new();
-
         public void Awake()
         {
         }
 
         public async ETTask Reload(Type configType)
         {
-            var oneConfigBytes =
-                    await EventSystem.Instance.Invoke<GetOneConfigBytes, ETTask<ByteBuf>>(new GetOneConfigBytes { ConfigName = configType.Name });
+            GetOneConfigBytes getOneConfigBytes = new() { ConfigName = configType.Name };
+            ByteBuf oneConfigBytes = await EventSystem.Instance.Invoke<GetOneConfigBytes, ETTask<ByteBuf>>(getOneConfigBytes);
             LoadOneConfig(configType, oneConfigBytes);
-            ResolveRef(); //热重载某一个配置的时候也要触发所有配置否则可能会引起各种引用丢失问题 不确定是否还有潜在问题 热重载配置还需观察
         }
 
         public async ETTask LoadAsync()
         {
-            this.allConfig.Clear();
-            var configBytes = await EventSystem.Instance.Invoke<GetAllConfigBytes, ETTask<Dictionary<Type, ByteBuf>>>(new GetAllConfigBytes());
+            Dictionary<Type, ByteBuf> configBytes = await EventSystem.Instance.Invoke<GetAllConfigBytes, ETTask<Dictionary<Type, ByteBuf>>>(new GetAllConfigBytes());
 
-#if DOTNET || UNITY_STANDALONE //因为低端机开多线程加载会卡死
+#if DOTNET || UNITY_STANDALONE
             using ListComponent<Task> listTasks = ListComponent<Task>.Create();
+
             foreach (Type type in configBytes.Keys)
             {
                 ByteBuf oneConfigBytes = configBytes[type];
-                Task task = Task.Run(() => LoadOneInThread(type, oneConfigBytes));
+                Task task = Task.Run(() => LoadOneConfig(type, oneConfigBytes));
                 listTasks.Add(task);
             }
 
             await Task.WhenAll(listTasks.ToArray());
 #else
-            foreach (var (type,buf) in configBytes)
+            foreach (Type type in configBytes.Keys)
             {
-                LoadOneConfig(type, buf);
+                LoadOneConfig(type, configBytes[type]);
             }
 #endif
-
-            ResolveRef();
         }
 
-        private void LoadOneConfig(Type configType, ByteBuf oneConfigBytes)
+        private static void LoadOneConfig(Type configType, ByteBuf oneConfigBytes)
         {
             object category = Activator.CreateInstance(configType, oneConfigBytes);
-            this.allConfig[configType] = category as IConfig;
-            World.Instance.AddSingleton(category as ASingleton);
-        }
-
-        private void LoadOneInThread(Type configType, ByteBuf oneConfigBytes)
-        {
-            object category = Activator.CreateInstance(configType, oneConfigBytes);
-
-            lock (this)
-            {
-                this.allConfig[configType] = category as IConfig;
-                World.Instance.AddSingleton(category as ASingleton);
-            }
-        }
-
-        private void ResolveRef()
-        {
-            foreach (var targetConfig in this.allConfig.Values)
-            {
-                targetConfig.ResolveRef();
-            }
-
-            foreach (var targetConfig in this.allConfig.Values)
-            {
-                Initialized(targetConfig);
-            }
-        }
-
-        private void Initialized(IConfig configCategory)
-        {
-            var iConfigSystems = EntitySystemSingleton.Instance.TypeSystems.GetSystems(configCategory.GetType(), typeof(IConfigSystem));
-            if (iConfigSystems == null)
-            {
-                return;
-            }
-
-            foreach (IConfigSystem aConfigSystem in iConfigSystems)
-            {
-                if (aConfigSystem == null)
-                {
-                    continue;
-                }
-
-                try
-                {
-                    aConfigSystem.Initialized(configCategory);
-                }
-                catch (Exception e)
-                {
-                    Log.Error(e);
-                }
-            }
+            ASingleton singleton = category as ASingleton;
+            World.Instance.AddSingleton(singleton);
         }
     }
 }

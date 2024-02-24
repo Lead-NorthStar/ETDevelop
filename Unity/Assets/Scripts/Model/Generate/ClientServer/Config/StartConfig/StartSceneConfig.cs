@@ -61,19 +61,9 @@ namespace ET
         /// </summary>
         public readonly int Port;
 
-
         public const int __ID__ = 1499456844;
-        public override int GetTypeId() => __ID__;
 
-        public  void ResolveRef()
-        {
-            
-            
-            
-            
-            
-            
-        }
+        public override int GetTypeId() => __ID__;
 
         public override string ToString()
         {

@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace ET
 {
     [Config]
-    public partial class AIConfigCategory : Singleton<AIConfigCategory>, IConfig
+    public partial class AIConfigCategory : Singleton<AIConfigCategory>
     {
         private readonly Dictionary<int, AIConfig> _dataMap;
         private readonly List<AIConfig> _dataList;
@@ -40,13 +40,6 @@ namespace ET
         public AIConfig GetOrDefault(int key) => _dataMap.TryGetValue(key, out var v) ? v : null;
         public AIConfig Get(int key) => _dataMap[key];
         public AIConfig this[int key] => _dataMap[key];
-        public void ResolveRef()
-        {
-            foreach(var _v in _dataList)
-            {
-                _v.ResolveRef();
-            }
-        }
 
         partial void PostInit();
     }
