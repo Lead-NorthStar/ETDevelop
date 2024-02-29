@@ -60,6 +60,17 @@
             <Link>Unity.Mathematics/$([System.String]::new(%(RecursiveDir)).Substring($([System.String]::new(%(RecursiveDir)).Indexof("Unity.Mathematics"))).Replace("Unity.Mathematics", ""))/%(FileName)%(Extension)</Link>
         </Compile>
 
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Jolt\**\*.cs">
+            <Link>Jolt/%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\..\Unity\Assets\Plugins\x86_64\joltc.dll">
+            <Link>runtimes\win\native\RecastDll.dll</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
