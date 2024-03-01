@@ -1,11 +1,28 @@
-# YIUI-ET8.0
-最新同步日期: 2024-01-13
+# English: please use your browser to translate to english
 
 # __讨论QQ群 : 474643097__  
 
 ---
 # 公司黑名单：  
 ## 成都三猩元宇宙公司，拖欠员工工资，拖欠本人咨询费用  
+---
+
+---
+# 商业项目（已出现多个一个人开发的MMO上线，足以证明ET的强大）：    
+1. [千古风流](https://www.qiangu.com/) 大型mmo，团队100人2年开发完成  
+2. [神选誓约](https://www.taptap.cn/app/248095)  
+3. [危境](https://www.taptap.cn/app/271100) 一个技术一个策划开发的mmo，抖音可以搜索危境看直播  
+4. 魔力回忆 许木大厨一个人开发的魔力宝贝  
+5. [新生](https://store.steampowered.com/app/1704940/_/) steam上，一个人开发的科幻mmo  
+6. [怒斩屠龙之乾坤剑指](http://wan.rxqu.com/mobile/downfile/index/gid/9.html) 传奇项目  
+7. [魔法点点2](https://www.taptap.com/app/227804) 一个人开发  
+8. [养不大](https://www.taptap.com/app/71064)  
+9. 天天躲猫猫2（ios2019春节下载排行19）  
+10. [牛虎棋牌](https://gitee.com/ECPS_admin/PlanB)  
+11. [五星麻将](https://github.com/wufanjoin/fivestar)  
+12. [代号肉鸽：无限](https://www.taptap.cn/app/247225) 一个人开发  
+13. [卡车人生](https://www.kxdw.com/android/130033.html)  
+14. [掌门太闲](https://www.taptap.cn/app/361952) 一个人开发  
 ---
 
 # ET8.1 发布!  
@@ -30,28 +47,35 @@
 16. 集成了sj的非托管容器库，性能爆炸  
 
 
-#[YIUI-ET7.2 视频介绍](https://www.bilibili.com/video/BV1KC4y1d7NZ)
+# 用ET的18个理由  
+1. 多进程多线程Actor架构，客户端跟服务端都可以轻松创建纤程(fiber)利用多核，比如客户端网络一个纤程，寻路一个纤程，帧同步逻辑层一个纤程，表现层一个纤程  
+2. async await协程同步代码编写，避免回调地狱  
+3. 0GC消耗，超强的MemoryPack序列化, 超强的网络层性能  
+4. kcp支持，网络响应非常迅速，并且闪断wifi 4g都不会导致掉线，做竞技游戏必备  
+5. kcp底层可以使用tcp udp Websocket协议，当udp联不通的情况下，可以切换成tcp Websocket，并且支持运行时动态切换，玩家不掉线！   
+6. 软路由防攻击设计，买些垃圾主机就可以防住黑客攻击，比买高防省钱多了，并且用户不会掉线  
+7. 双端C#开发，前后端共享代码，C#本身性能极强，仅次于CPP，不需要学一些乱起八糟的语言，很多独立游戏开发者，一个人就能用ET开发mmorpg游戏  
+8. 强大的编译分析器，编译器就能帮助大家写出正确的ET风格的代码  
+9. 客户端hybridclr热更新支持  
+10. 客户端服务端均支持运行时热重载，客户端服务端不需要关闭进程就能修改代码，大大提升了开发效率以及运营效率  
+11. 完善的demo，源码带有状态同步跟预测回滚的帧同步demo  
+12. 完善的机器人开发机制，机器人直接共享客户端逻辑代码，减少95%机器人开发工作量，接入ai机器人非常轻松。大规模机器人压测，轻而易举  
+13. 强大的ai开发机制，比行为树更加容易  
+14. 强大的单元测试开发机制，每个单元测试都是整个游戏环境，不用搞mock隔离，开发起来非常轻松  
+15. 优美的程序结构，数据跟方法完全分离  
+16. all in one的开发体验，开发时只需要启动unity，发布的时候又可以单独发布服务端，并且可以跨windows跟linux平台  
+17. 客户端服务端数据开发期完全可视化，开启ENABLE_VIEW宏即可在Unity Hierarchy面板中看到客户端跟服务端的所有的Entity对象以及字段的内容  
+18. WebGL以及微信小游戏支持，有ET8的webgl版本，开发体验跟ET8完全一致，无缝对接ET8的服务器  
 
 
-[YIUI视频教程](https://www.bilibili.com/video/BV1cz4y1s7QS)  
+# 熊猫的三门课程,需要请加QQ 80081771：  
+1. [网络游戏架构设计](https://www.bilibili.com/video/BV1h84y1G7aH/?spm_id_from=333.999.0.0&vd_source=e55f8234b8f8039504cbf131082c93dd)  基于ET7.2，共27集，讲解ET7.2的框架设计细节  
+2. [帧同步设计](https://www.bilibili.com/video/BV1tX4y1C7pM/?share_source=copy_web&vd_source=001b901865c99550d1b2a8cd663695d4)  基于ET8，共12集，讲解预测回滚帧同步设计  
+3. [多线程架构设计](https://www.bilibili.com/video/BV1Ah4y1f7QT/?spm_id_from=333.999.0.0&vd_source=e55f8234b8f8039504cbf131082c93dd)  基于ET8，共11集，讲解ET8的多线程设计  
+4. WebGL小游戏框架，基于ET8，完善的网络，配置，热更等等，跟ET8使用一样  
 
-# 目录
 
-0. 总览
-1. 安装
-2. 初始化项目
-3. 主入口
-4. Demo资源
-5. 登录界面
-6. CDE绑定功能
-7. 加载界面
-8. 主界面
-9. 商店界面
-10. 无限循环列表
-11. 英雄界面
-12. UI上显示3D模型
-13. 红点系统
-14. 多语言
+# [ET论坛](https://et-framework.cn)  
 
 # [ET商店](./Store)  
 
@@ -195,16 +219,6 @@ ET框架是一个强大灵活的分布式服务端架构，完全可以满足绝
 [框架demo介绍](http://www.jianshu.com/p/f2ea0d26c7c1)  
 [linux部署](http://gad.qq.com/article/detail/35973)  
 
-商业项目:  
-1. [千古风流](https://www.qiangu.com/)  
-2. [神选誓约](https://www.taptap.cn/app/248095)  
-3. [魔法点点2](https://www.taptap.com/app/227804)  
-4. [养不大](https://www.taptap.com/app/71064)  
-5. 天天躲猫猫2（ios2019春节下载排行19）  
-6. [牛虎棋牌](https://gitee.com/ECPS_admin/PlanB)  
-7. [五星麻将](https://github.com/wufanjoin/fivestar)  
-8. [神选誓约](https://www.taptap.cn/app/248095)  
-9. [代号肉鸽：无限](https://www.taptap.cn/app/247225)  
 
 群友demo：  
 1. [斗地主（客户端服务端）](https://github.com/Viagi/LandlordsCore)  
@@ -236,7 +250,5 @@ __讨论QQ群 : 474643097__
 [xasset](https://github.com/xasset/xasset) 致力于为 Unity 项目提供了一套 精简稳健 的资源管理环境  
 [QFramework](https://github.com/liangxiegame/QFramework) Your first K.I.S.S Unity3d Framework  
 [ET UI框架](https://github.com/zzjfengqing/ET-EUI) 字母哥实现的UI框架，ET风格，各种事件分发  
-[ETCsharpToXLua](https://github.com/zzjfengqing/ETCsharpToXLua) 字母哥使用csharp.lua实现的ET客户端热更新  
-[et-6-with-ilruntime](https://www.lfzxb.top/et-6-with-ilruntime) 烟雨使用ILRuntime实现的ET客户端热更新  
 [Luban](https://github.com/focus-creative-games/luban) 适用于大中型项目的游戏配置解决方案  
 [ET-YIUI](https://github.com/LiShengYang-yiyi/YIUI/tree/YIUI-ET7.2) ETUI框架 
