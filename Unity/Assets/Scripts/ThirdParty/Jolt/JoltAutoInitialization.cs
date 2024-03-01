@@ -1,4 +1,5 @@
-﻿using Jolt.Native;
+﻿using System;
+using Jolt.Native;
 
 namespace Jolt
 {
@@ -8,18 +9,16 @@ namespace Jolt
 
         private const uint DefaultTempAllocatorSize = 10 * 1024 * 1024; // 10MB
 
-        public static void Initialize()
+        public static bool Initialize()
         {
-            if (initialized) return;
+            if (initialized) return false;
 
             if (!JoltAPI.JPH_Init(DefaultTempAllocatorSize))
-            {
-                //Debug.LogError("JPH_Init failed");
-            }
+                return false;
 
             initialized = true;
 
-            //Application.quitting += Shutdown;
+            return true;
         }
 
         private static void Shutdown()
