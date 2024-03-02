@@ -6,25 +6,22 @@ namespace Jolt
 {
     public struct PhysicsSystem : IDisposable, IEquatable<PhysicsSystem>
     {
-        internal NativeHandle<JPH_PhysicsSystem> Handle;
-
+        private NativeHandle<JPH_PhysicsSystem> Handle;
         public ObjectLayerPairFilter ObjectLayerPairFilter;
-
         public BroadPhaseLayerInterface BroadPhaseLayerInterface;
-
         public ObjectVsBroadPhaseLayerFilter ObjectVsBroadPhaseLayerFilter;
 
         public PhysicsSystem(PhysicsSystemSettings settings)
         {
             Handle = JPH_PhysicsSystem_Create(settings, out var h1, out var h2, out var h3);
-
             ObjectLayerPairFilter = new ObjectLayerPairFilter(h1);
-
             BroadPhaseLayerInterface = new BroadPhaseLayerInterface(h2);
-
             ObjectVsBroadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilter(h3);
         }
-
+        
+        /// <summary>
+        /// <para>优化 broadphase 阶段，只有在第一次调用 Update() 之前添加了许多 bodies 时才需要。</para>
+        /// </summary>
         public void OptimizeBroadPhase()
         {
             JPH_PhysicsSystem_OptimizeBroadPhase(Handle);

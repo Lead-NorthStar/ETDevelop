@@ -6,7 +6,7 @@
 
         public const float DefaultCollisionTolerance = 1.0e-4f;
 
-        public const float DefaultPenetrationTolerance = 1.0e-4f; ///< Stop when there's less than 1% change
+        public const float DefaultPenetrationTolerance = 1.0e-4f; // < Stop when there's less than 1% change
 
         public const float CapsuleProjectionSlop = 0.02f;
 
