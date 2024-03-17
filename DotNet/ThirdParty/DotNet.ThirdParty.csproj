@@ -68,7 +68,7 @@
 
     <ItemGroup>
         <Content Include="..\..\Unity\Assets\Plugins\x86_64\joltc.dll">
-            <Link>runtimes\win\native\RecastDll.dll</Link>
+            <Link>runtimes\win\native\joltc.dll</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>

@@ -1,9 +1,10 @@
 using Jolt;
+using System.Collections.Generic;
 
 namespace ET
 {
-    [ComponentOf]
-    public class JoltPhysicsComponent: Entity, IAwake, IDestroy
+    [ComponentOf(typeof(Room))]
+    public class JoltWorldComponent: Entity, IAwake, IDestroy
     {
         public const uint MaxBodies = 1024;
         public const uint MaxBodyPairs = 1024;
@@ -11,9 +12,7 @@ namespace ET
 
         public const int CollisionSteps = 1;
 
-        public PhysicsSystem system;
-        public BodyInterface bodies;
-
-        // private List<(BodyID, GameObject)> managedGameObjects = new();
+        public PhysicsSystem System;
+        public BodyInterface Bodies;
     }
 }
