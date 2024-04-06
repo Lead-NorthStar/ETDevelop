@@ -73,5 +73,22 @@ namespace ET
         {
             return (d.Ticks - dt.Ticks) / 10000;
         }
+
+        private long deltaTime;
+        // 上一次 Ticks 的时间
+        private long LastTime;
+        // 启动以来的总 Ticks
+        private long TotalTicksSinceStart;
+        private long fixedInterval;
+        public bool CanFixedUpdate()
+        {
+            deltaTime = this.ClientNow() - LastTime;
+            double count = deltaTime / this.fixedInterval;
+            
+            long nowTime = DateTime.UtcNow.Ticks - this.dt1970.Ticks;
+            this.TotalTicksSinceStart += nowTime - this.LastTime;
+            this.LastTime = nowTime;
+            return this.TotalTicksSinceStart >= 60;
+        }
     }
 }

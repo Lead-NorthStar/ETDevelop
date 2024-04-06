@@ -3,20 +3,20 @@ using Unity.Mathematics;
 
 namespace ET
 {
-    [FriendOf(typeof(JoltWorldComponent))]
-    [EntitySystemOf(typeof(JoltWorldComponent))]
-    public static partial class JoltWorldComponentSystem
+    [FriendOf(typeof(PhysicsWorld3D))]
+    [EntitySystemOf(typeof(PhysicsWorld3D))]
+    public static partial class PhysicsWorld3DSystem
     {
         [EntitySystem]
-        private static void Awake(this JoltWorldComponent self)
+        private static void Awake(this PhysicsWorld3D self)
         {
             JoltAutoInitialization.Initialize();
             
             PhysicsSystemSettings settings = new()
             {
-                MaxBodies = JoltWorldComponent.MaxBodies,
-                MaxBodyPairs = JoltWorldComponent.MaxBodyPairs,
-                MaxContactConstraints = JoltWorldComponent.MaxContactConstraints
+                MaxBodies = PhysicsWorld3D.MaxBodies,
+                MaxBodyPairs = PhysicsWorld3D.MaxBodyPairs,
+                MaxContactConstraints = PhysicsWorld3D.MaxContactConstraints
             };
 
             self.System = new PhysicsSystem(settings);
@@ -32,25 +32,27 @@ namespace ET
         }
 
         [EntitySystem]
-        private static void Destroy(this JoltWorldComponent self)
+        private static void Destroy(this PhysicsWorld3D self)
         {
             self.System.Dispose();
         }
 
-        public static void FixedUpdate(this JoltWorldComponent self, int fixedDeltaTime)
+        [EntitySystem]
+        private static void Update(this PhysicsWorld3D self)
         {
-            if (!self.System.Step(fixedDeltaTime, JoltWorldComponent.CollisionSteps, out PhysicsUpdateError error))
+            float fixedDeltaTime = 0.02f;
+            if (!self.System.Step(fixedDeltaTime, PhysicsWorld3D.CollisionSteps, out PhysicsUpdateError error))
             {
                 Log.Error(error.ToString());
             }
         }
 
-        public static Body CreateBody(this JoltWorldComponent self, BodyComponent bodyComponent, BodyCreationSettings settings)
+        public static Body CreateBody(this PhysicsWorld3D self, Body3DComponent body3DComponent, BodyCreationSettings settings)
         {
             return self.Bodies.CreateBody(settings);
         }
         
-        public static void DestroyBody(this JoltWorldComponent self, BodyID bodyID)
+        public static void DestroyBody(this PhysicsWorld3D self, BodyID bodyID)
         {
             self.Bodies.DestroyBody(bodyID);
         }

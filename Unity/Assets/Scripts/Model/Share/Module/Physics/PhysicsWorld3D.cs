@@ -1,10 +1,9 @@
 using Jolt;
-using System.Collections.Generic;
 
 namespace ET
 {
-    [ComponentOf(typeof(Room))]
-    public class JoltWorldComponent: Entity, IAwake, IDestroy
+    [ComponentOf(typeof(Scene))]
+    public class PhysicsWorld3D: Entity, IAwake, IUpdate, IDestroy
     {
         public const uint MaxBodies = 1024;
         public const uint MaxBodyPairs = 1024;
