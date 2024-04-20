@@ -62,14 +62,14 @@ namespace ET
             self.Bodies.AddBody(bodyID, activation);
         }
         
-        public static float4x4 GetWorldTransform(this PhysicsWorld3D self, BodyID bodyID)
-        {
-            return self.Bodies.GetWorldTransform(bodyID);
-        }
-        
         public static void DestroyBody(this PhysicsWorld3D self, BodyID bodyID)
         {
             self.Bodies.DestroyBody(bodyID);
+        }
+        
+        public static float4x4 GetWorldTransform(this PhysicsWorld3D self, BodyID bodyID)
+        {
+            return self.Bodies.GetWorldTransform(bodyID);
         }
     }
 }

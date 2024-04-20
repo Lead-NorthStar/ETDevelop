@@ -11,7 +11,13 @@ namespace ET
         [EntitySystem]
         private static void Awake(this Body3DComponent self, BodyCreationSettings settings)
         {
-            self.PhysicsWorld3D = self.Scene().GetComponent<PhysicsWorld3D>();
+            self.PhysicsWorld3D = self.Root().GetComponent<PhysicsWorld3D>();
+            if (self.PhysicsWorld3D == null)
+            {
+                Log.Error($"{self.Root().SceneType} 场景下没有添加 PhysicsWorld3D");
+                return;
+            }
+            
             self.Body = self.PhysicsWorld3D.CreateBody(settings);
             self.PhysicsWorld3D.AddBody(self.GetBodyID(), Activation.Activate);
         }
@@ -20,6 +26,12 @@ namespace ET
         private static void Awake(this Body3DComponent self, ShapeSettings settings, MotionType motion, ushort layer)
         {
             self.PhysicsWorld3D = self.Root().GetComponent<PhysicsWorld3D>();
+            if (self.PhysicsWorld3D == null)
+            {
+                Log.Error($"{self.Root().SceneType} 场景下没有添加 PhysicsWorld3D");
+                return;
+            }
+            
             Unit unit = self.GetParent<Unit>();
             BodyCreationSettings bodySettings = BodyCreationSettings.FromShapeSettings(settings, unit.Position, unit.Rotation, motion, layer);
             self.Body = self.PhysicsWorld3D.CreateBody(bodySettings);
@@ -29,12 +41,18 @@ namespace ET
         [EntitySystem]
         private static void Destroy(this Body3DComponent self)
         {
+            if (self.PhysicsWorld3D == null)
+                return;
+            
             self.PhysicsWorld3D.DestroyBody(self.GetBodyID());
         }
         
         [EntitySystem]
         private static void Update(this Body3DComponent self)
         {
+            if (self.PhysicsWorld3D == null)
+                return;
+            
             // Unit unit = self.GetParent<Unit>();
             // unit.Position = self.Body.GetPosition();
             // unit.Rotation = self.Body.GetRotation();
