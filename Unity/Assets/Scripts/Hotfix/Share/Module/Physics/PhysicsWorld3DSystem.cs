@@ -47,9 +47,24 @@ namespace ET
             }
         }
 
-        public static Body CreateBody(this PhysicsWorld3D self, Body3DComponent body3DComponent, BodyCreationSettings settings)
+        public static Body CreateBody(this PhysicsWorld3D self, BodyCreationSettings settings)
         {
             return self.Bodies.CreateBody(settings);
+        }
+        
+        public static BodyID CreateAndAddBody(this PhysicsWorld3D self,BodyCreationSettings settings, Activation activation)
+        {
+            return self.Bodies.CreateAndAddBody(settings, activation);
+        }
+        
+        public static void AddBody(this PhysicsWorld3D self, BodyID bodyID, Activation activation)
+        {
+            self.Bodies.AddBody(bodyID, activation);
+        }
+        
+        public static float4x4 GetWorldTransform(this PhysicsWorld3D self, BodyID bodyID)
+        {
+            return self.Bodies.GetWorldTransform(bodyID);
         }
         
         public static void DestroyBody(this PhysicsWorld3D self, BodyID bodyID)
