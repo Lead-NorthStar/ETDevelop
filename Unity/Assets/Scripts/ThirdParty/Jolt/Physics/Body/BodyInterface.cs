@@ -6,9 +6,9 @@ namespace Jolt
 {
     public struct BodyInterface
     {
-        internal NativeOwnedHandle<JPH_BodyInterface> Handle;
+        internal NativeHandle<JPH_BodyInterface> Handle;
 
-        internal BodyInterface(NativeOwnedHandle<JPH_BodyInterface> handle)
+        internal BodyInterface(NativeHandle<JPH_BodyInterface> handle)
         {
             Handle = handle;
         }
@@ -43,7 +43,7 @@ namespace Jolt
             return JPH_BodyInterface_GetWorldTransform(Handle, bodyID);
         }
 
-        public double3 GetCenterOfMassPosition(BodyID bodyID)
+        public rvec3 GetCenterOfMassPosition(BodyID bodyID)
         {
             return JPH_BodyInterface_GetCenterOfMassPosition(Handle, bodyID);
         }

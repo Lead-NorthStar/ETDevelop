@@ -1,9 +1,6 @@
-﻿using System;
-using Jolt.Native;
-
-namespace Jolt
+﻿namespace Jolt
 {
-    public static class JoltAutoInitialization 
+    public static class JoltAutoInitialization
     {
         private static bool initialized;
 
@@ -16,6 +13,7 @@ namespace Jolt
             if (!JoltAPI.JPH_Init(DefaultTempAllocatorSize))
                 return false;
 
+            NativeSafetyHandle.Initialize();
             initialized = true;
 
             return true;
@@ -24,6 +22,7 @@ namespace Jolt
         private static void Shutdown()
         {
             JoltAPI.JPH_Shutdown();
+            NativeSafetyHandle.Deinitialize();
 
             initialized = false;
         }

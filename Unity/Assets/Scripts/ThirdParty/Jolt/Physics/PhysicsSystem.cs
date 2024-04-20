@@ -6,22 +6,33 @@ namespace Jolt
 {
     public struct PhysicsSystem : IDisposable, IEquatable<PhysicsSystem>
     {
-        private NativeHandle<JPH_PhysicsSystem> Handle;
+        internal NativeHandle<JPH_PhysicsSystem> Handle;
+
         public ObjectLayerPairFilter ObjectLayerPairFilter;
+
         public BroadPhaseLayerInterface BroadPhaseLayerInterface;
+
         public ObjectVsBroadPhaseLayerFilter ObjectVsBroadPhaseLayerFilter;
+
+        internal NativeHandle<JPH_ContactListener> ContactListenerHandle;
+
+        internal NativeHandle<JPH_BodyActivationListener> BodyActivationListenerHandle;
 
         public PhysicsSystem(PhysicsSystemSettings settings)
         {
             Handle = JPH_PhysicsSystem_Create(settings, out var h1, out var h2, out var h3);
+
             ObjectLayerPairFilter = new ObjectLayerPairFilter(h1);
+
             BroadPhaseLayerInterface = new BroadPhaseLayerInterface(h2);
+
             ObjectVsBroadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilter(h3);
+
+            ContactListenerHandle = JPH_ContactListener_Create();
+
+            BodyActivationListenerHandle = JPH_BodyActivationListener_Create();
         }
-        
-        /// <summary>
-        /// <para>优化 broadphase 阶段，只有在第一次调用 Update() 之前添加了许多 bodies 时才需要。</para>
-        /// </summary>
+
         public void OptimizeBroadPhase()
         {
             JPH_PhysicsSystem_OptimizeBroadPhase(Handle);
@@ -30,6 +41,20 @@ namespace Jolt
         public BodyInterface GetBodyInterface()
         {
             return new BodyInterface(JPH_PhysicsSystem_GetBodyInterface(Handle));
+        }
+
+        public void SetContactListener(IContactListener listener)
+        {
+            StaticContactListener.Attach(this, listener);
+
+            JPH_PhysicsSystem_SetContactListener(Handle, ContactListenerHandle);
+        }
+
+        public void SetBodyActivationListener(IBodyActivationListener listener)
+        {
+            StaticBodyActivationListener.Attach(this, listener);
+
+            JPH_PhysicsSystem_SetBodyActivationListener(Handle, BodyActivationListenerHandle);
         }
 
         /// <summary>
@@ -68,7 +93,15 @@ namespace Jolt
 
         public void Dispose()
         {
+            StaticContactListener.Detach(this);
+
+            StaticBodyActivationListener.Detach(this);
+
             JPH_PhysicsSystem_Destroy(Handle);
+
+            JPH_ContactListener_Destroy(ContactListenerHandle);
+
+            JPH_BodyActivationListener_Destroy(BodyActivationListenerHandle);
         }
 
         public bool Equals(PhysicsSystem other)
