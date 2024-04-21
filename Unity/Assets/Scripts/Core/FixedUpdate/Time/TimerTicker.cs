@@ -1,8 +1,4 @@
-﻿/**
- * Code from Xenko TimerTick
- */
-
-using System;
+﻿using System;
 using System.Diagnostics;
 
 namespace ET
@@ -12,34 +8,23 @@ namespace ET
         #region Fields
 
         private long startRawTime;
-
         private long lastRawTime;
-
         private int pauseCount;
-
         private long pauseStartTime;
-
         private long timePaused;
-
         private decimal speedFactor;
 
         #endregion
 
-        #region Constructors and Destructors
+        #region 构造和析构函数
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimerTick"/> class.
-        /// </summary>
         public TimerTick()
         {
             speedFactor = 1.0m;
             Reset();
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimerTick" /> class.
-        /// </summary>
-        /// <param name="startTime">The start time.</param>
+        /// <param name="startTime">开始时间</param>
         public TimerTick(TimeSpan startTime)
         {
             speedFactor = 1.0m;
@@ -51,44 +36,42 @@ namespace ET
         #region Public Properties
 
         /// <summary>
-        /// 获取创建此计时器时的开始时间。
+        /// 创建此计时器时的开始时间。
         /// </summary>
         public TimeSpan StartTime { get; private set; }
 
         /// <summary>
-        /// 获取自上次重置或创建此计时器以来经过的总时间。
+        /// 自上次重置或创建此计时器以来经过的总时间。
         /// </summary>
         public TimeSpan TotalTime { get; private set; }
 
         /// <summary>
-        /// 获取上次重置或创建此定时器后所用的总时间，包括 <see cref="Pause"/>
+        /// 自上次重置或创建此定时器后所经过的总时间，包括 <see cref="Pause"/>
         /// </summary>
         public TimeSpan TotalTimeWithPause { get; private set; }
 
         /// <summary>
-        /// 获取自上次调用 <see cref="Tick"/> 后经过的时间。
+        /// 自上次调用 <see cref="Tick"/> 后经过了的时间。
         /// </summary>
         public TimeSpan ElapsedTime { get; private set; }
 
         /// <summary>
-        /// 获取自上次调用 <see cref="Tick"/> 包括 <see cref="Pause"/> 后所用的时间
+        /// 自上次调用 <see cref="Tick"/> 后所经过了的时间，包括 <see cref="Pause"/> 
         /// </summary>
         public TimeSpan ElapsedTimeWithPause { get; private set; }
 
         /// <summary>
-        /// 获取或设置速度因子。默认为 1.0
+        /// 速度系数，默认为 1.0
         /// </summary>
-        /// <value>The speed factor.</value>
         public double SpeedFactor
         {
-            get { return (double) speedFactor; }
-            set { speedFactor = (decimal) value; }
+            get { return (double)speedFactor; }
+            set { speedFactor = (decimal)value; }
         }
 
         /// <summary>
-        /// 获取表示该实例是否暂停的值。
+        /// 实例是否暂停。
         /// </summary>
-        /// <value><c>true</c> if this instance is paused; otherwise, <c>false</c>.</value>
         public bool IsPaused
         {
             get { return pauseCount > 0; }
@@ -96,10 +79,10 @@ namespace ET
 
         #endregion
 
-        #region Public Methods and Operators
+        #region 公共方法和运算符
 
         /// <summary>
-        /// Resets this instance. <see cref="TotalTime"/> is set to zero.
+        /// 重置此实例。<see cref="TotalTime"/> 设置为零。
         /// </summary>
         public void Reset()
         {
@@ -107,9 +90,8 @@ namespace ET
         }
 
         /// <summary>
-        /// Resets this instance. <see cref="TotalTime" /> is set to startTime.
+        /// 重置此实例。<see cref="TotalTime" /> 设置为 startTime。
         /// </summary>
-        /// <param name="startTime">The start time.</param>
         public void Reset(TimeSpan startTime)
         {
             StartTime = startTime;
@@ -122,36 +104,34 @@ namespace ET
         }
 
         /// <summary>
-        /// Resumes this instance, only if a call to <see cref="Pause"/> has been already issued.
+        /// 只有在已调用 <see cref="Pause"/> 的情况下，才能重新开始该实例。
         /// </summary>
         public void Resume()
         {
             pauseCount--;
-            if (pauseCount <= 0)
-            {
-                timePaused += Stopwatch.GetTimestamp() - pauseStartTime;
-                pauseStartTime = 0L;
-            }
+            if (this.pauseCount > 0)
+                return;
+
+            this.timePaused += Stopwatch.GetTimestamp() - this.pauseStartTime;
+            this.pauseStartTime = 0L;
         }
 
         /// <summary>
         /// 更新 <see cref="TotalTime"/> 和 <see cref="ElapsedTime"/>
         /// </summary>
-        /// <remarks>
-        /// This method must be called on a regular basis at every *tick*.
-        /// </remarks>
         public void Tick()
         {
-            // Don't tick when this instance is paused.
+            // 当暂停时，不进行 tick
             if (IsPaused)
             {
                 ElapsedTime = TimeSpan.Zero;
                 return;
             }
 
+            // 获取定时器的刻度
             long rawTime = Stopwatch.GetTimestamp();
-            TotalTime = StartTime + new TimeSpan((long) Math.Round(ConvertRawToTimestamp(rawTime - timePaused - startRawTime).Ticks * speedFactor));
-            TotalTimeWithPause = StartTime + new TimeSpan((long) Math.Round(ConvertRawToTimestamp(rawTime - startRawTime).Ticks * speedFactor));
+            TotalTime = StartTime + new TimeSpan((long)Math.Round(ConvertRawToTimestamp(rawTime - timePaused - startRawTime).Ticks * speedFactor));
+            TotalTimeWithPause = StartTime + new TimeSpan((long)Math.Round(ConvertRawToTimestamp(rawTime - startRawTime).Ticks * speedFactor));
 
             ElapsedTime = ConvertRawToTimestamp(rawTime - timePaused - lastRawTime);
             ElapsedTimeWithPause = ConvertRawToTimestamp(rawTime - lastRawTime);
@@ -165,7 +145,7 @@ namespace ET
         }
 
         /// <summary>
-        /// Pauses this instance.
+        /// 暂停此实例。
         /// </summary>
         public void Pause()
         {

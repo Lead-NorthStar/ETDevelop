@@ -3,7 +3,7 @@ using Jolt;
 namespace ET
 {
     [ComponentOf(typeof(Scene))]
-    public class PhysicsWorld3D: Entity, IAwake, IUpdate, IDestroy
+    public class PhysicsWorld3D: Entity, IAwake, IDestroy, IFixedUpdate<GameTime>
     {
         public const uint MaxBodies = 1024;
         public const uint MaxBodyPairs = 1024;

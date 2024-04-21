@@ -88,7 +88,7 @@ namespace ET
             long nowTime = DateTime.UtcNow.Ticks - this.dt1970.Ticks;
             this.TotalTicksSinceStart += nowTime - this.LastTime;
             this.LastTime = nowTime;
-            return this.TotalTicksSinceStart >= 60;
+            return this.TotalTicksSinceStart >= 166666; // FixedDefine.LogicFrame;
         }
     }
 }

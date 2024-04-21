@@ -48,7 +48,7 @@ namespace ET
         }
         
         [EntitySystem]
-        private static void Update(this Body3DComponent self)
+        private static void FixedUpdate(this Body3DComponent self)
         {
             if (self.PhysicsWorld3D == null)
                 return;

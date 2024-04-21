@@ -1,3 +1,4 @@
+using System;
 using Jolt;
 using Unity.Mathematics;
 
@@ -38,10 +39,9 @@ namespace ET
         }
 
         [EntitySystem]
-        private static void Update(this PhysicsWorld3D self)
+        private static void FixedUpdate(this PhysicsWorld3D self, GameTime gameTime)
         {
-            float fixedDeltaTime = 0.02f;
-            if (!self.System.Step(fixedDeltaTime, PhysicsWorld3D.CollisionSteps, out PhysicsUpdateError error))
+            if (!self.System.Step((float)gameTime.Elapsed.TotalSeconds, PhysicsWorld3D.CollisionSteps, out PhysicsUpdateError error))
             {
                 Log.Error(error.ToString());
             }

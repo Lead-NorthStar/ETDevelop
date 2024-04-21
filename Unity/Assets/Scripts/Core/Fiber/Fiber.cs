@@ -65,18 +65,6 @@ namespace ET
 #endif
             this.Root = new Scene(this, id, 1, sceneType, name);
         }
-        
-        internal void FixedUpdate()
-        {
-            try
-            {
-                this.EntitySystem.FixedUpdate();
-            }
-            catch (Exception e)
-            {
-                Log.Error(e);
-            }
-        }
 
         internal void Update()
         {
