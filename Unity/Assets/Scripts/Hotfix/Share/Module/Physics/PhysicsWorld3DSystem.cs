@@ -35,6 +35,7 @@ namespace ET
         [EntitySystem]
         private static void Destroy(this PhysicsWorld3D self)
         {
+            JoltAutoInitialization.Destroy();
             self.System.Dispose();
         }
 

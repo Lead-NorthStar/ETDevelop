@@ -1,5 +1,6 @@
 ﻿namespace Jolt
 {
+    // TODO:Jolt 这个似乎需要做成单例
     public static class JoltAutoInitialization
     {
         private static bool initialized;
@@ -10,16 +11,23 @@
         {
             if (initialized) return false;
 
+            NativeSafetyHandle.Initialize();
+
             if (!JoltAPI.JPH_Init(DefaultTempAllocatorSize))
                 return false;
 
-            NativeSafetyHandle.Initialize();
+            JoltAPI.JPH_SetAssertFailureHandler(OnAssertFailure);
             initialized = true;
 
             return true;
         }
+        
+        private static void OnAssertFailure(string expr, string message, string file, uint line)
+        {
+            //Log.Error($"Jolt Assertion Failed:\n{expr}\n{message}\n{file}\n{line}");
+        }
 
-        private static void Shutdown()
+        public static void Destroy()
         {
             JoltAPI.JPH_Shutdown();
             NativeSafetyHandle.Deinitialize();
