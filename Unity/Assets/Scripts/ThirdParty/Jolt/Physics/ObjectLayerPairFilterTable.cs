@@ -17,27 +17,28 @@ namespace Jolt
             return new ObjectLayerPairFilterTable(JPH_ObjectLayerPairFilterTable_Create(numObjectLayers));
         }
 
+
         /// <summary>
-        /// Reinterpret the native handle as an ObjectLayerPairFilter.
+        /// Implicit reinterpret cast as a base ObjectLayerPairFilter.
         /// </summary>
-        public ObjectLayerPairFilter AsObjectLayerPairFilter()
+        public static implicit operator ObjectLayerPairFilter(ObjectLayerPairFilterTable table)
         {
-            return new ObjectLayerPairFilter(Handle);
+            return new ObjectLayerPairFilter(table.Handle);
         }
 
         #region JPH_ObjectLayerPairFilterTable
 
-        public void EnableCollision(ushort layerA, ushort layerB)
+        public void EnableCollision(ObjectLayer layerA, ObjectLayer layerB)
         {
             JPH_ObjectLayerPairFilterTable_EnableCollision(Handle, layerA, layerB);
         }
 
-        public void DisableCollision(ushort layerA, ushort layerB)
+        public void DisableCollision(ObjectLayer layerA, ObjectLayer layerB)
         {
             JPH_ObjectLayerPairFilterTable_DisableCollision(Handle, layerA, layerB);
         }
 
-        public bool ShouldCollide(ushort layerA, ushort layerB)
+        public bool ShouldCollide(ObjectLayer layerA, ObjectLayer layerB)
         {
             return JPH_ObjectLayerPairFilterTable_ShouldCollide(Handle, layerA, layerB);
         }

@@ -29,6 +29,20 @@ namespace Jolt.Samples
         /// </remarks>
         private const uint MaxContactConstraints = 1024;
 
+        private static class ObjectLayers
+        {
+            public static readonly ObjectLayer Static = 0;
+            public static readonly ObjectLayer Moving = 1;
+            public const uint NumLayers = 2;
+        }
+
+        private static class BroadPhaseLayers
+        {
+            public static readonly BroadPhaseLayer Static = 0;
+            public static readonly BroadPhaseLayer Moving = 1;
+            public const uint NumLayers = 2;
+        }
+
         private const int CollisionSteps = 1;
 
         private PhysicsSystem system;
@@ -40,11 +54,26 @@ namespace Jolt.Samples
         {
             JoltAutoInitialization.Initialize();
             
+            var objectLayerPairFilter = ObjectLayerPairFilterTable.Create(ObjectLayers.NumLayers);
+
+            objectLayerPairFilter.EnableCollision(ObjectLayers.Static, ObjectLayers.Moving);
+            objectLayerPairFilter.EnableCollision(ObjectLayers.Moving, ObjectLayers.Moving);
+
+            var broadPhaseLayerInterface = BroadPhaseLayerInterfaceTable.Create(ObjectLayers.NumLayers, BroadPhaseLayers.NumLayers);
+
+            broadPhaseLayerInterface.MapObjectToBroadPhaseLayer(ObjectLayers.Static, BroadPhaseLayers.Static);
+            broadPhaseLayerInterface.MapObjectToBroadPhaseLayer(ObjectLayers.Moving, BroadPhaseLayers.Moving);
+
+            var objectVsBroadPhaseLayerFilter = ObjectVsBroadPhaseLayerFilterTable.Create(broadPhaseLayerInterface, BroadPhaseLayers.NumLayers, objectLayerPairFilter, ObjectLayers.NumLayers);
+
             var settings = new PhysicsSystemSettings
             {
                 MaxBodies = MaxBodies,
                 MaxBodyPairs = MaxBodyPairs,
-                MaxContactConstraints = MaxContactConstraints
+                MaxContactConstraints = MaxContactConstraints,
+                ObjectLayerPairFilter = objectLayerPairFilter,
+                BroadPhaseLayerInterface = broadPhaseLayerInterface,
+                ObjectVsBroadPhaseLayerFilter = objectVsBroadPhaseLayerFilter,
             };
 
             system = new PhysicsSystem(settings);
