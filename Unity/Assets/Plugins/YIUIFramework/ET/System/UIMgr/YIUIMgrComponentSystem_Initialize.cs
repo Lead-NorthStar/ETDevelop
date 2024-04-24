@@ -5,11 +5,6 @@ namespace ET.Client
 {
     public static partial class YIUIMgrComponentSystem
     {
-        public static void InitAllBind(this YIUIMgrComponent self)
-        {
-            self.BindInit = YIUIBindHelper.InitAllBind();
-        }
-
         //添加component的地方 调用 方便异步等待
         //因为UI初始化需要动态加载UI根节点
         public static async ETTask Initialize(this YIUIMgrComponent self)
