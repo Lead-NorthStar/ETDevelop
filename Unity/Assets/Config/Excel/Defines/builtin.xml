@@ -2,16 +2,208 @@
     <bean name="vector2" valueType="1" sep=",">
         <var name="x" type="float"/>
         <var name="y" type="float"/>
+        <mapper target="All" codeTarget="cs-bin">
+            <option name="type" value="Unity.Mathematics.float2"/>
+            <option name="constructor" value="ExternalTypeUtil.NewVector2"/>
+        </mapper>
     </bean>
     <bean name="vector3" valueType="1" sep=",">
         <var name="x" type="float"/>
         <var name="y" type="float"/>
         <var name="z" type="float"/>
+        <mapper target="All" codeTarget="cs-bin">
+            <option name="type" value="Unity.Mathematics.float3"/>
+            <option name="constructor" value="ExternalTypeUtil.NewVector3"/>
+        </mapper>
     </bean>
     <bean name="vector4" valueType="1" sep=",">
         <var name="x" type="float"/>
         <var name="y" type="float"/>
         <var name="z" type="float"/>
         <var name="w" type="float"/>
+        <mapper target="All" codeTarget="cs-bin">
+            <option name="type" value="Unity.Mathematics.float4"/>
+            <option name="constructor" value="ExternalTypeUtil.NewVector4"/>
+        </mapper>
     </bean>
+	
+	<enum name="NumericType">
+		<var name="Max" value="10000"/>
+		
+		<var name="Hp" alias="生命值" value="1000"/>
+		<var name="HpBase"  alias="生命值Base" value="10001"/>
+		
+		<var name="MaxHp" alias="最大生命值" value="1001"/>
+		<var name="MaxHpBase" alias="最大生命值Base" value="10011"/>
+		<var name="MaxHpAdd"/>
+		<var name="MaxHpPct"/>
+		<var name="MaxHpFinalAdd"/>
+		<var name="MaxHpFinalPct"/>
+		
+		<var name="Speed" value="1002"/>
+		<var name="SpeedBase" value="10021"/>
+		<var name="SpeedAdd"/>
+		<var name="SpeedPct"/>
+		<var name="SpeedFinalAdd"/>
+		<var name="SpeedFinalPct"/>
+		
+		<var name="AOI" value="1003"/>
+		<var name="AOIBase" value="10031"/>
+		<var name="AOIAdd"/>
+		<var name="AOIPct"/>
+		<var name="AOIFinalAdd"/>
+		<var name="AOIFinalPct"/>
+	</enum>
+	
+	<bean name="NumericPair" sep=":" comment="数值对">
+		<var name="keys" type="NumericType" comment="属性槽"/>
+		<var name="values" type="long" comment="属性值"/>
+	</bean>
+	<bean name="NumericContainer" comment="数值容器">
+		<var name="Numeric" type="list,NumericPair" comment="属性槽"/>
+	</bean>
 </module>
+
+<!--
+enum定义：
+字段名	可选	默认值	描述
+name	否				类型名，不能包含命名空间
+flags	是		false	是否为标志位类型，对应c#的FlagsAttribute语义
+unique	是		false	当前enum内的所有枚举值必须唯一，等价schema逻辑结构中isUniqueItemId字段
+comment	是		
+tags	是				填写方式为 key1=value1#key2=value2...
+
+var子元素：
+字段	可空	默认值	说明
+name	否		枚举项名
+alias	是		别名
+value	是		枚举值
+comment	是		
+tags	是		同其他tags写法
+
+mapper子元素：
+字段		可空	默认值	说明
+target		否		为1-n个，以逗号','分割
+codeTarget	否		1-n个，以逗号','分割
+
+value如果为空，则自动从上一个枚举项值开始递增，如果是第一个枚举值，则值取0。
+value可以为10进制整数或者0x10之类的16进制整数。
+value也可以是其他枚举值的或组合，如A|B。
+
+<enum name="类型名" flags="false" unique="false" comment="" tags="key1=value1#key2=value2...">
+    <var name="枚举项名0" alias="别名" value="0" comment="" tags=""/>
+    <var name="枚举项名1" value="1"/>
+    <mapper target="client(匹配的输出目标)" codeTarget="cs-bin">
+        <option name="type" value="UnityEngine.AudioType"/>
+    </mapper>
+</enum>
+
+===============================================================================
+
+bean定义：
+字段		可空	默认值	说明
+name		否				类型名，不能包含命名空间
+parent		是				父类名，如果名字不包含命名空间，会优先从当前命名空间找，再从全局命名空间找
+valueType	是		false	是否为值类型，例如为c#这种支持值类型的语言生成代码时，生成struct而不是class类型，对于java这种语言没有效果
+sep			是				默认字段分割符，用于excel中紧凑地填写复合结构，如在一个单元格内1,2,3表达一个vector3结构，而不是强行占据多个单元格。sep可以是多个字符，表示用sep中任意一个字符分割，而不是整个sep作为分割符
+alias		是		false	别名，主要用于英文不好的策划填写多态名，如Circle类也能填'圆'来表达
+comment		是		
+group		是		
+tags		是
+
+var子元素：
+字段	可空
+name	否
+type	否
+group	是
+comment	是
+tags	是
+		
+bean子元素：定义了子结构，子结构的parent为上级bean，自动包含父类的所有字段，
+	此时该子结构的parent字段会被自动忽略，子bean的定义方式与bean完全相同。
+	这种包含类型继承的结构为多态结构，尤其适合在技能、副本、AI中表达复杂GamePlay数据结构。
+	
+mapper子元素：定义了外部类型映射相关信息，与enum中mapper的定义方式完全相同，不再赘述。
+
+bean支持继承和多态。如果parent字段为非空，则表示继承该父类的字段。
+如果parent不包含命名空间，会从bean当前命名空间内查找该类型，否则全局查找。
+所有补继承的bean都是抽象类，不可实例化。
+类型系统中允许使用抽象bean为类型，但埴写数据时，必须使用某个子类去实例化它。
+这种多态特性使得luban具备表达任意复杂数据结构的能力。
+
+<module name="命名空间名，可以为空。可以是多级命名空间，如a.b">
+  <bean name="类型名" parent="父类名" valueType=="false" sep="分隔符" alias="别名" comment="注释" group="组" tags="标签">
+    <var name="字段名" type="字段类型" group="组" comment="注释" tags="标签"/>
+    <mapper target="client" codeTarget="cs-bin">
+        <option name="type" value="UnityEngine.AudioType"/>
+    </mapper>
+	<bean name="类型名"/>
+  </bean>
+</module>
+
+===============================================================================
+
+字段				可空	默认值	说明
+name				否				类型名，不能包含命名空间
+value				否				表记录类型
+readSchemaFromFile	是		false	是否从input的excel文件标题头行中读取value定义。此时不能再定义value对应的bean，否则会出现定义重复的错误
+input				否				可以为多个，以逗号','分割，输入的数据文件列表，不可为空
+index				是				可以为多以，如果是联合主键，则以'+'分割，如果是独立主键，则以','分割
+mode				是				取one(或singleton)、map、list之一
+comment				是		
+group				是				导出分组，可以为0到多个
+tags				是				自定义tag对，可以0到多个
+output				否				输出的文件名，如果为空，则取 FullName.LowerCase().Replace('.', '_')
+
+如果index为空，并且mode=map或空，则自动取valueType第一个字段为index。当table有多个主键时，如果是联合主键，则以'key1+key2+,,,+keyn'方式填写，如果是独立主键， 则以'key1,key2,,,keyn'方式配置。
+
+TableMode为表模式枚举，可取one(或singleton)、map、list。留空则根据index决定具体mode值：如果index为空或1个主键则为map，index为valueType的第1个字段； 如果index为多个主键，则mode为list。
+
+inputFiles指定了多个输入数据源，定义方式极其灵活。每个数据源可以是以下值：
+
+    来自某个excel文件的所有单元薄。例如 xxx.xlsx
+    来自某个excel文件的指定单元薄。例如 sheet@xxx.xlsx
+    来自json、xml、lua、yaml、unity scriptable asset文件。例如 xx.json或xx.xml或xx.lua或xx.yml
+    来自json、xml、lua、yaml、unity scriptable asset子字段。 例如 *items@item_module.json或item.consts@item_module.json之类，其他格式同理
+    来自目录。目录树下所有文件（包含递归子目录）都会被当作数据源读入，每个文件(excel族例外)对应一个记录。例如 skill_json_dir
+    以上的随意组合。如 xx.xlsx,sheet2@yy.xls,abc@zz.json,ccc_dir
+
+<table name="TbItem" value="Item" input="item.xlsx"/>
+
+===============================================================================
+
+字段	可空	说明
+name	否		可以为1-n个值，以逗号','分割，每个值必须为table全名（如item.TbItem,item.TbItem2）
+
+<refgroup name="item.TbItem,item.TbItem2"/>
+
+===============================================================================
+
+groups
+由导出table的valueType计算出所有直接或者间接引用的类型（enum和bean），称之为默认导出集合。
+如果某个类型在默认导出集合内，即使它的groups不属于当前导出目标，也会被导出。
+如果groups中包含"*"，则表示属于所有分组。如果enum、bean的groups包含"*"，
+则意味着即使默认导出集合中没有引用这个类型，一定会为它生成代码。
+
+field（bean的字段列表）没有默认导出集合的概念，如果groups为空，则导出给所有分组。
+
+tags
+tags主要有两个用途：校验器和特殊代码生成。
+
+有时候想对某个类型生成一些特殊代码时，可以给该类型添加一些特殊tag属性，
+然后在代码模板中根据tag属性值作特殊处理。这种机制不常用，但有时候很有用。 
+has_tag函数用于检查是否有某个tag, get_tag用于获得某个tag对应的值，具体请看模板相关文档。
+
+typeMapper
+有时候你希望生成的代码中能直接使用现成的结构类型，而不是使用生成的类型代码。例如vector3是非常常见的类型，你在配置中定义了vector3后，可能希望生成的C#代码中涉及到 vector3类型的地方能直接使用UnityEngine.Vector3，而不是生成的vector3类。Luban支持这种外部类型映射机制，可以将配置类映射到外部现成的enum或者class类型。
+
+字段		类型			可空	描述
+targets		list,string		否		匹配的输出目标，此target即为全局定义中的target
+codeTargets	list,string		否		匹配的代码目标 
+options		map,string,string		生成需要的参数	
+
+实际项目中，服务器和客户端的语言可能不一样，有可能客户端需要对某个类型映射，而服务器不需要。targets和codeTargets即用来处理这种情形，只有target和codeTarget 都匹配时，才会对生成的代码作类型映射。
+
+options应该有哪些参数，完全由具体的CodeTarget决定，不同的codeTarget需要的参数不同。
+
+-->

@@ -9,10 +9,10 @@ namespace ET
 		
 		public int NumericType { get; }
 
-		public NumericWatcherAttribute(SceneType sceneType, int type)
+		public NumericWatcherAttribute(SceneType sceneType, NumericType type)
 		{
 			this.SceneType = sceneType;
-			this.NumericType = type;
+			this.NumericType = (int)type;
 		}
 	}
 }

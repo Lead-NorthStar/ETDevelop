@@ -23,6 +23,7 @@ namespace ET
             Height = _buf.ReadInt();
             Weight = _buf.ReadInt();
             AI = _buf.ReadInt();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Numeric = new System.Collections.Generic.Dictionary<NumericType, long>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { NumericType _k0;  _k0 = (NumericType)_buf.ReadInt(); long _v0;  _v0 = _buf.ReadLong();     Numeric.Add(_k0, _v0);}}
 
             PostInit();
         }
@@ -72,6 +73,11 @@ namespace ET
         /// </summary>
         public AIConfig AIConfig => AIConfigCategory.Instance.GetOrDefault(AI);
 
+        /// <summary>
+        /// 数值
+        /// </summary>
+        public readonly System.Collections.Generic.Dictionary<NumericType, long> Numeric;
+
         public const int __ID__ = -568528378;
 
         public override int GetTypeId() => __ID__;
@@ -86,6 +92,7 @@ namespace ET
             + "Height:" + Height + ","
             + "Weight:" + Weight + ","
             + "AI:" + AI + ","
+            + "Numeric:" + Luban.StringUtil.CollectionToString(Numeric) + ","
             + "}";
         }
 
