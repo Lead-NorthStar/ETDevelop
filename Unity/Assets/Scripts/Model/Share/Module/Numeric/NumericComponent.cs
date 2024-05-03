@@ -7,9 +7,19 @@ namespace ET
     [FriendOf(typeof (NumericComponent))]
     public static class NumericComponentSystem
     {
+        public static float GetAsFloat(this NumericComponent self, NumericType numericType)
+        {
+            return (float)self.GetByKey(numericType) / 10000;
+        }
+ 
         public static float GetAsFloat(this NumericComponent self, int numericType)
         {
             return (float)self.GetByKey(numericType) / 10000;
+        }
+
+        public static int GetAsInt(this NumericComponent self, NumericType numericType)
+        {
+            return (int)self.GetByKey(numericType);
         }
 
         public static int GetAsInt(this NumericComponent self, int numericType)
@@ -17,9 +27,19 @@ namespace ET
             return (int)self.GetByKey(numericType);
         }
 
+        public static long GetAsLong(this NumericComponent self, NumericType numericType)
+        {
+            return self.GetByKey(numericType);
+        }
+
         public static long GetAsLong(this NumericComponent self, int numericType)
         {
             return self.GetByKey(numericType);
+        }
+
+        public static void Set(this NumericComponent self, NumericType nt, float value)
+        {
+            self[nt] = (long)(value * 10000);
         }
 
         public static void Set(this NumericComponent self, int nt, float value)
@@ -27,7 +47,17 @@ namespace ET
             self[nt] = (long)(value * 10000);
         }
 
+        public static void Set(this NumericComponent self, NumericType nt, int value)
+        {
+            self[nt] = value;
+        }
+
         public static void Set(this NumericComponent self, int nt, int value)
+        {
+            self[nt] = value;
+        }
+
+        public static void Set(this NumericComponent self, NumericType nt, long value)
         {
             self[nt] = value;
         }
@@ -37,9 +67,19 @@ namespace ET
             self[nt] = value;
         }
 
+        public static void SetNoEvent(this NumericComponent self, NumericType numericType, long value)
+        {
+            self.Insert(numericType, value, false);
+        }
+
         public static void SetNoEvent(this NumericComponent self, int numericType, long value)
         {
             self.Insert(numericType, value, false);
+        }
+
+        public static void Insert(this NumericComponent self, NumericType numericType, long value, bool isPublicEvent = true)
+        {
+            self.Insert((int)numericType, value, isPublicEvent);
         }
 
         public static void Insert(this NumericComponent self, int numericType, long value, bool isPublicEvent = true)
@@ -52,7 +92,7 @@ namespace ET
 
             self.NumericDic[numericType] = value;
 
-            if (numericType >= NumericType.Max)
+            if (numericType >= (int)NumericType.Max)
             {
                 self.Update(numericType, isPublicEvent);
                 return;
@@ -65,6 +105,13 @@ namespace ET
             }
         }
 
+        public static long GetByKey(this NumericComponent self, NumericType key)
+        {
+            long value = 0;
+            self.NumericDic.TryGetValue((int)key, out value);
+            return value;
+        }
+
         public static long GetByKey(this NumericComponent self, int key)
         {
             long value = 0;
@@ -74,7 +121,7 @@ namespace ET
 
         public static void Update(this NumericComponent self, int numericType, bool isPublicEvent)
         {
-            int final = (int)numericType / 10;
+            int final = numericType / 10;
             int bas = final * 10 + 1;
             int add = final * 10 + 2;
             int pct = final * 10 + 3;
@@ -104,6 +151,18 @@ namespace ET
         public Dictionary<int, long> NumericDic = new Dictionary<int, long>();
 
         public long this[int numericType]
+        {
+            get
+            {
+                return this.GetByKey(numericType);
+            }
+            set
+            {
+                this.Insert(numericType, value);
+            }
+        }
+
+        public long this[NumericType numericType]
         {
             get
             {
