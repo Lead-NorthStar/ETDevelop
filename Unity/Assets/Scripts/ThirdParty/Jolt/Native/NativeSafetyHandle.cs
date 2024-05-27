@@ -5,7 +5,7 @@ using NativeCollection;
 namespace Jolt
 {
     #if !JOLT_DISABLE_SAFETY_CHECkS
-    
+
     /// <summary>
     /// A safety handle for detecting use-after-free access of native objects.
     /// </summary>
@@ -54,7 +54,7 @@ namespace Jolt
         {
             if (disposed.Contains(handle.Index))
             {
-                //Debug.LogWarning("A NativeSafetyHandle is being released for a handle index that was already released.");
+                // TODO: Debug.LogWarning("A NativeSafetyHandle is being released for a handle index that was already released.");
             }
 
             disposed.Add(handle.Index);

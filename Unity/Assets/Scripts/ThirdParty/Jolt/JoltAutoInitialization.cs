@@ -12,10 +12,10 @@
 
             NativeSafetyHandle.Initialize();
 
-            if (!JoltAPI.JPH_Init(DefaultTempAllocatorSize))
+            if (!SafeBindings.JPH_Init(DefaultTempAllocatorSize))
                 return false;
 
-            JoltAPI.JPH_SetAssertFailureHandler(OnAssertFailure);
+            SafeBindings.JPH_SetAssertFailureHandler(OnAssertFailure);
             initialized = true;
 
             return true;
@@ -31,7 +31,7 @@
             if (!initialized)
                 return;
             
-            JoltAPI.JPH_Shutdown();
+            SafeBindings.JPH_Shutdown();
             NativeSafetyHandle.Deinitialize();
 
             initialized = false;
