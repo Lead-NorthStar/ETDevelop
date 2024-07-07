@@ -43,13 +43,19 @@ namespace Jolt
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly T* Unwrap()
+        public readonly T* IntoPointer()
         {
             #if !JOLT_DISABLE_SAFETY_CHECkS
             NativeSafetyHandle.AssertExists(in safety);
             #endif
 
             return ptr;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static implicit operator T* (NativeHandle<T> handle)
+        {
+            return handle.IntoPointer();
         }
 
         #region IDisposable

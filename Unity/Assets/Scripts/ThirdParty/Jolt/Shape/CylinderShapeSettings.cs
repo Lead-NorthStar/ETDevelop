@@ -1,9 +1,10 @@
 ﻿using System;
-using static Jolt.SafeBindings;
+using static Jolt.Bindings;
 
 namespace Jolt
 {
-    public readonly struct CylinderShapeSettings : IConvexShapeSettings, IDisposable, IEquatable<CylinderShapeSettings>
+    [GenerateHandle]
+    public readonly partial struct CylinderShapeSettings : IConvexShapeSettings, IDisposable
     {
         internal readonly NativeHandle<JPH_CylinderShapeSettings> Handle;
 
@@ -57,34 +58,5 @@ namespace Jolt
         {
             JPH_ShapeSettings_Destroy(Handle);
         }
-
-        #region IEquatable
-
-        public static bool operator ==(CylinderShapeSettings lhs, CylinderShapeSettings rhs)
-        {
-            return lhs.Equals(rhs);
-        }
-
-        public static bool operator !=(CylinderShapeSettings lhs, CylinderShapeSettings rhs)
-        {
-            return !lhs.Equals(rhs);
-        }
-
-        public bool Equals(CylinderShapeSettings other)
-        {
-            return Handle.Equals(other.Handle);
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is CylinderShapeSettings other && Equals(other);
-        }
-
-        public override int GetHashCode()
-        {
-            return Handle.GetHashCode();
-        }
-
-        #endregion
     }
 }

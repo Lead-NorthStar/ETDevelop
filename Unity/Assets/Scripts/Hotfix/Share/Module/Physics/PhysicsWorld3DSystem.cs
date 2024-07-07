@@ -11,7 +11,7 @@ namespace ET
         [EntitySystem]
         private static void Awake(this PhysicsWorld3D self)
         {
-            JoltAutoInitialization.Initialize();
+            JoltRuntimeInitialization.Initialize();
             
             PhysicsSystemSettings settings = new()
             {
@@ -35,8 +35,8 @@ namespace ET
         [EntitySystem]
         private static void Destroy(this PhysicsWorld3D self)
         {
-            JoltAutoInitialization.Destroy();
             self.System.Dispose();
+            JoltRuntimeInitialization.Destroy();
         }
 
         [EntitySystem]

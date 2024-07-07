@@ -1,8 +1,13 @@
 ﻿namespace Jolt
 {
-    public enum ConstraintSpace : uint
+    [GenerateHandle, GenerateBindings("JPH_Constraint")]
+    public readonly partial struct Constraint
     {
-        LocalToBodyCOM = 0,
-        WorldSpace = 1,
+        internal readonly NativeHandle<JPH_Constraint> Handle;
+
+        internal Constraint(NativeHandle<JPH_Constraint> handle)
+        {
+            Handle = handle;
+        }
     }
 }

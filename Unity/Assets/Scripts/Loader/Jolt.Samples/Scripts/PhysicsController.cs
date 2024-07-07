@@ -52,7 +52,7 @@ namespace Jolt.Samples
 
         private void Start()
         {
-            JoltAutoInitialization.Initialize();
+            JoltRuntimeInitialization.Initialize();
             
             var objectLayerPairFilter = ObjectLayerPairFilterTable.Create(ObjectLayers.NumLayers);
 
@@ -116,6 +116,7 @@ namespace Jolt.Samples
         private void OnDestroy()
         {
             system.Dispose();
+            JoltRuntimeInitialization.Destroy();
         }
     }
 }
