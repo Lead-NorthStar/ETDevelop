@@ -3,8 +3,8 @@ using static Jolt.Bindings;
 
 namespace Jolt
 {
-    [GenerateHandle, GenerateBindings("JPH_Shape"), GenerateBindings("JPH_ConvexShape"), GenerateBindings("JPH_BoxShape")]
-    public readonly partial struct BoxShape : IConvexShape
+    [GenerateHandle("JPH_BoxShape"), GenerateBindings("JPH_Shape"), GenerateBindings("JPH_ConvexShape"), GenerateBindings("JPH_BoxShape")]
+    public readonly partial struct BoxShape
     {
         internal readonly NativeHandle<JPH_BoxShape> Handle;
 
@@ -14,7 +14,7 @@ namespace Jolt
         }
 
         [OverrideBinding("JPH_BoxShape_Create")]
-        public BoxShape Create(float3 halfExtent, float convexRadius = PhysicsSettings.DefaultConvexRadius)
+        public static BoxShape Create(float3 halfExtent, float convexRadius = PhysicsSettings.DefaultConvexRadius)
         {
             return new BoxShape(JPH_BoxShape_Create(halfExtent, convexRadius));
         }

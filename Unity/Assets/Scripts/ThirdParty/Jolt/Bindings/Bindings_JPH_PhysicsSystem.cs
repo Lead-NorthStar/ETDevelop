@@ -7,9 +7,12 @@ namespace Jolt
     {
         public static NativeHandle<JPH_PhysicsSystem> JPH_PhysicsSystem_Create(PhysicsSystemSettings settings)
         {
+            // TODO use marshalling instead of recreating native settings
+
             var nativeSettings = new JPH_PhysicsSystemSettings
             {
                 maxBodies = settings.MaxBodies,
+                numBodyMutexes = settings.NumBodyMutexes,
                 maxBodyPairs = settings.MaxBodyPairs,
                 maxContactConstraints = settings.MaxContactConstraints,
                 objectLayerPairFilter = settings.ObjectLayerPairFilter.Handle,
@@ -106,14 +109,14 @@ namespace Jolt
             return gravity;
         }
 
-        public static void JPH_PhysicsSystem_AddConstraint(NativeHandle<JPH_PhysicsSystem> system)
+        public static void JPH_PhysicsSystem_AddConstraint(NativeHandle<JPH_PhysicsSystem> system, NativeHandle<JPH_Constraint> constraint)
         {
-            throw new NotImplementedException();
+            UnsafeBindings.JPH_PhysicsSystem_AddConstraint(system, constraint);
         }
 
-        public static void JPH_PhysicsSystem_RemoveConstraint(NativeHandle<JPH_PhysicsSystem> system)
+        public static void JPH_PhysicsSystem_RemoveConstraint(NativeHandle<JPH_PhysicsSystem> system, NativeHandle<JPH_Constraint> constraint)
         {
-            throw new NotImplementedException();
+            UnsafeBindings.JPH_PhysicsSystem_RemoveConstraint(system, constraint);
         }
 
         public static void JPH_PhysicsSystem_AddConstraints(NativeHandle<JPH_PhysicsSystem> system)

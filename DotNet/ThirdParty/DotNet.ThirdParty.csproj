@@ -67,8 +67,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="..\..\Unity\Assets\Plugins\x86_64\joltc.dll">
-            <Link>runtimes\win\native\joltc.dll</Link>
+        <Content Include="..\..\Unity\Assets\Plugins\Jolt.Native\Debug\windows-x64\joltc.dll">
+            <Link>Runtimes\Win\Native\joltc.dll</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>

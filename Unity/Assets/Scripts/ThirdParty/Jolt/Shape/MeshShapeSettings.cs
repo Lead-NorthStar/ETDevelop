@@ -4,8 +4,8 @@ using static Jolt.Bindings;
 
 namespace Jolt
 {
-    [GenerateHandle, GenerateBindings("JPH_ShapeSettings"), GenerateBindings("JPH_MeshShapeSettings")]
-    public readonly partial struct MeshShapeSettings : IShapeSettings
+    [GenerateHandle("JPH_MeshShapeSettings"), GenerateBindings("JPH_ShapeSettings"), GenerateBindings("JPH_MeshShapeSettings")]
+    public readonly partial struct MeshShapeSettings
     {
         internal readonly NativeHandle<JPH_MeshShapeSettings> Handle;
 
@@ -18,7 +18,7 @@ namespace Jolt
         /// Allocate a new native MeshShapeSettings and return the handle.
         /// </summary>
         [OverrideBinding("JPH_MeshShapeSettings_Create")]
-        public MeshShapeSettings Create(ReadOnlySpan<Triangle> triangles)
+        public static MeshShapeSettings Create(ReadOnlySpan<Triangle> triangles)
         {
             return new MeshShapeSettings(JPH_MeshShapeSettings_Create(triangles));
         }
