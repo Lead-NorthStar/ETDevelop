@@ -1,4 +1,5 @@
-﻿using Unity.Mathematics;
+﻿using System.Drawing.Drawing2D;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,6 +8,12 @@ namespace Jolt.Samples
     public static class PhysicsShapeHandles
     {
         private static readonly Color HandleColor = new Color(0.7f, 1f, 0.5f);
+
+        private static void StartHandle()
+        {
+            Handles.color = HandleColor;
+            Handles.matrix = Matrix4x4.identity;
+        }
 
         private static void StartHandle(float3 position, quaternion rotation)
         {
@@ -18,6 +25,37 @@ namespace Jolt.Samples
         {
             Handles.color = default;
             Handles.matrix = Matrix4x4.identity;
+        }
+
+        public static void DrawLine(float3 a, float3 b)
+        {
+            StartHandle();
+            
+            Handles.DrawLine(a, b);
+            
+            ResetHandle();
+        }
+        
+        public static void DrawLine(float3 a, float3 b, float thickness)
+        {
+            StartHandle();
+            
+            Handles.DrawLine(a, b, thickness);
+            
+            ResetHandle();
+        }
+
+        public static void DrawPoint(float3 position, quaternion rotation)
+        {
+            StartHandle(position, rotation);
+
+            const float scale = 0.2f;
+            
+            Handles.DrawLine(scale * math.forward(), scale * math.back());
+            Handles.DrawLine(scale * math.left(), scale * math.right());
+            Handles.DrawLine(scale * math.up(), scale * math.down());
+            
+            ResetHandle();
         }
 
         public static void DrawBoxShape(float3 position, quaternion rotation, PhysicsShapeBox shape)
@@ -35,6 +73,17 @@ namespace Jolt.Samples
                 DrawRoundedWireCube(float3.zero, shape.HalfExtent * 2f, clampedConvexRadius);
             }
 
+            ResetHandle();
+        }
+
+        public static void DrawPlaneShape(float3 position, quaternion rotation, PhysicsShapePlane plane)
+        {
+            StartHandle(position, rotation);
+            
+            DrawQuadXZ(float3.zero, new float2(plane.HalfExtent * 2f));
+            
+            Handles.DrawLine(float3.zero, new float3(0f, 1f, 0f));
+            
             ResetHandle();
         }
 

@@ -4,13 +4,12 @@
     {
         private static bool initialized;
 
-        private const uint DefaultTempAllocatorSize = 10 * 1024 * 1024; // 10MB
-
         public static bool Initialize()
         {
             if (initialized) return false;
 
             NativeSafetyHandle.Initialize();
+            Jolt.SetAssertFailureHandler(OnAssertFailure);
 
             if (!Jolt.Initialize())
                 return false;
@@ -29,6 +28,12 @@
             // NativeSafetyHandle.Deinitialize();
 
             initialized = false;
+        }
+        
+        private static bool OnAssertFailure(string expr, string message, string file, uint line)
+        {
+            // Debug.Log($"Jolt Assertion Failed:\n{expr}\n{message}\n{file}\n{line}");
+            return false;
         }
     }
 }
